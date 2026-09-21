@@ -95,6 +95,20 @@ if [ -z "$only" ] || [ "$only" = kem-29 ]; then
 fi
 
 echo
+echo "== kex-02 AFS-KEX: completed-session key recovery after long-term compromise (report: Critical) =="
+if [ -z "$only" ] || [ "$only" = kex-02 ]; then
+    if [ -x kex-02/reproduce_pfs_break ] &&
+       [ -x kex-02/reproduce_pfs_break_c256 ] &&
+       [ -x kex-02/reproduce_pfs_break_c512 ]; then
+        kex-02/reproduce_pfs_break || fail=$((fail + 1))
+        kex-02/reproduce_pfs_break_c256 || fail=$((fail + 1))
+        kex-02/reproduce_pfs_break_c512 || fail=$((fail + 1))
+    else
+        echo "SKIP   kex-02 (build it: make -C kex-02 exploit)"; skipped=$((skipped + 1))
+    fi
+fi
+
+echo
 echo "== sign-03 CEDRUS+C: adaptive FORS leaf-accumulation forgery (report: Critical) =="
 if [ -z "$only" ] || [ "$only" = sign-03 ]; then
     if [ -x sign-03/reproduce_forgery ] && [ -f sign-03/lib/libCEDRUSC-160f.so ]; then
@@ -108,6 +122,12 @@ echo
 echo "== sign-01 Aigis-Sig+ / sign-07 CS: SUF-CMA malleability (report: High) =="
 run sign-01 "        " CONFIRMED sig-malleable sign-01/lib/libAigis-sig1.so
 run sign-07 "        " CONFIRMED sig-malleable sign-07/lib/libCS-128.so
+
+echo
+echo "== sign-15 MORNING-ATLAS: ignored hint padding violates SUF-CMA (report: Critical) =="
+for l in sign-15/lib/*.so; do
+    run sign-15 "        " CONFIRMED sig-hint-padding "$l"
+done
 
 echo
 echo "== sign-25 SQIsign2D2: verifier verdict depends on stale stack state (report: Critical) =="

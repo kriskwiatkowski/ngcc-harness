@@ -262,15 +262,20 @@ static int sig_malleable(void)
     ngcc_sig_sign_fn sg = sym("sig_sign");
     ngcc_sig_verify_fn vf = sym("sig_verify");
     seed_lib(0x11);
-    unsigned char msg[] = "NGCC reproducer message";
+    static const unsigned char original[] = "NGCC reproducer message";
+    unsigned char msg[sizeof original];
+    memcpy(msg, original, sizeof original);
     unsigned long long mn = sizeof msg - 1;
-    unsigned char *pk = calloc(m->pk_len,1), *sk = calloc(m->sk_len,1), *sn = calloc(m->sn_len,1);
+    size_t sn_cap = (size_t)m->sn_len + (size_t)mn + 64;
+    unsigned char *pk = calloc(m->pk_len,1), *sk = calloc(m->sk_len,1), *sn = calloc(sn_cap,1);
     unsigned long long pl=m->pk_len, sl=m->sk_len, nl=m->sn_len;
     if (kg(pk,&pl,sk,&sl) || sg(sk,sl,msg,mn,sn,&nl)) { fprintf(stderr,"keygen/sign failed\n"); exit(2); }
     if (vf(pk,pl,sn,nl,msg,mn)) { fprintf(stderr,"valid signature rejected\n"); exit(2); }
-    unsigned long long acc = 0, total = nl * 8, firstbyte = 0;
+    memcpy(msg, original, sizeof original);
+    unsigned long long acc = 0, total = m->sn_len * 8, firstbyte = 0;
     for (unsigned long long b = 0; b < total; b++) {
         sn[b/8] ^= (unsigned char)(1u << (b%8));
+        memcpy(msg, original, sizeof original);
         int r = GUARDED(vf(pk,pl,sn,nl,msg,mn), -99);
         sn[b/8] ^= (unsigned char)(1u << (b%8));
         if (r == 0) { if (!acc) firstbyte = b/8; acc++; }
@@ -284,6 +289,53 @@ static int sig_malleable(void)
     return verdict("sig-malleable", acc > 0,
         "%llu/%llu signature-bit flips still verify (first at byte %llu of %llu)",
         acc, total, firstbyte, nl);
+}
+
+/* MORNING-ATLAS: the fixed-size hint encoding contains unused coefficient
+ * slots, but unpack_sig stops at the final cumulative count and never checks
+ * that the remaining slots have their canonical zero encoding.  Flip a bit
+ * in the last unused slot for each submitted parameter set. */
+static int sig_hint_padding(void)
+{
+    const ngcc_meta_sig_t *m = (const ngcc_meta_sig_t *)g_meta;
+    ngcc_sig_keygen_fn kg = sym("sig_keygen");
+    ngcc_sig_sign_fn sg = sym("sig_sign");
+    ngcc_sig_verify_fn vf = sym("sig_verify");
+    unsigned long long offset;
+
+    if (!strcmp(g_meta->instance, "lwrdsa128")) offset = 2047;
+    else if (!strcmp(g_meta->instance, "lwrdsa192")) offset = 3327;
+    else if (!strcmp(g_meta->instance, "lwrdsa256")) offset = 4607;
+    else if (!strcmp(g_meta->instance, "lwrdsa512")) offset = 9999;
+    else { fprintf(stderr, "sig-hint-padding needs a MORNING-ATLAS library\n"); exit(2); }
+    if (offset >= m->sn_len) { fprintf(stderr, "unexpected signature layout\n"); exit(2); }
+
+    static const unsigned char original[] = "NGCC reproducer message";
+    unsigned char msg[sizeof original];
+    memcpy(msg, original, sizeof original);
+    unsigned long long mn = sizeof msg - 1;
+    size_t sn_cap = (size_t)m->sn_len + (size_t)mn + 64;
+    unsigned char *pk = calloc(m->pk_len, 1), *sk = calloc(m->sk_len, 1),
+                  *sn = calloc(sn_cap, 1);
+    unsigned long long pl = m->pk_len, sl = m->sk_len, nl = m->sn_len;
+    seed_lib(0x11);
+    if (kg(pk, &pl, sk, &sl) || sg(sk, sl, msg, mn, sn, &nl)) {
+        fprintf(stderr, "keygen/sign failed\n"); exit(2);
+    }
+    if (vf(pk, pl, sn, nl, msg, mn)) {
+        fprintf(stderr, "valid signature rejected\n"); exit(2);
+    }
+
+    /* Verification incorrectly overwrites the caller's message from the
+     * absent signature tail, so restore the same message before the attack. */
+    memcpy(msg, original, sizeof original);
+    sn[offset] ^= 0x80;
+    int changed = GUARDED(vf(pk, pl, sn, nl, msg, mn), -99);
+    sn[offset] ^= 0x80;
+    free(pk); free(sk); free(sn);
+    return verdict("sig-hint-padding", changed == 0,
+        "bit 7 of ignored hint byte %llu: modified signature %s for the same message",
+        offset, changed == 0 ? "ACCEPTED" : (changed == -99 ? "CRASHED" : "rejected"));
 }
 
 /* UVW: sig_verify discards its result and returns success unconditionally. */
@@ -422,6 +474,7 @@ static void usage(void)
       "  kem-reject-mask      <lib>            rejection mask leaks the secret  (Cheetah, Loong)\n"
       "  kem-ct-flip          <lib>            dead implicit rejection          (Aigis-Enc+)\n"
       "  sig-malleable        <lib>            SUF-CMA malleability             (Aigis-Sig+, CS)\n"
+      "  sig-hint-padding     <lib>            ignored hint encoding            (MORNING-ATLAS)\n"
       "  sig-accept-all       <lib>            verifier accepts anything        (UVW)\n"
       "  sig-uninit-verdict   <lib>            verdict depends on stale stack   (SQIsign2D2)\n"
       "  keygen-determinism   <lib>            seed ignored, same key           (Galas, VDOO)\n"
@@ -444,6 +497,7 @@ int main(int argc, char **argv)
     if (!strcmp(check, "kem-reject-mask"))    return kem_reject_mask();
     if (!strcmp(check, "kem-ct-flip"))        return kem_ct_flip();
     if (!strcmp(check, "sig-malleable"))      return sig_malleable();
+    if (!strcmp(check, "sig-hint-padding"))   return sig_hint_padding();
     if (!strcmp(check, "sig-accept-all"))     return sig_accept_all();
     if (!strcmp(check, "sig-uninit-verdict")) return sig_uninit_verdict();
     if (!strcmp(check, "keygen-determinism")) return keygen_determinism();

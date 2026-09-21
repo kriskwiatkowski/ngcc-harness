@@ -2,6 +2,9 @@
 # optional copies of the original submission archives are ignored.
 /tools/ngcc_attack
 /*/reproduce_forgery
+/kex-02/reproduce_pfs_break
+/kex-02/reproduce_pfs_break_c256
+/kex-02/reproduce_pfs_break_c512
 /orig/
 /bin/
 /results/

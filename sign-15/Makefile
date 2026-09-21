@@ -13,10 +13,10 @@ NGCC_KAT_DIR := Test_Vectors
 # files. A prebuilt bench_speed ELF is shipped in lwrdsa128/ and is ignored.
 #
 # Harness result: OVERFLOW on all four instances (candidate-side). sig_sign()
-# writes signature||message and returns CRYPTO_BYTES + m_len_bytes while
-# sig_get_sn_len_bytes() claims CRYPTO_BYTES; the submitted KATs (Sn_Len =
-# 2137, 2145, ... growing with M_Len) were produced by the unmodified ICCS
-# driver writing past its sig_get_sn_len_bytes()-sized calloc.
+# writes only the detached signature but returns CRYPTO_BYTES + m_len_bytes,
+# while sig_get_sn_len_bytes() claims CRYPTO_BYTES; the submitted KATs (Sn_Len
+# = 2137, 2145, ... growing with M_Len) were produced by the unmodified ICCS
+# driver reading past its sig_get_sn_len_bytes()-sized calloc while printing.
 define MA
 CFLAGS_$(1) := -std=c99
 $$(eval $$(call ngcc_instance,$(1),$(REF)/$(1)))

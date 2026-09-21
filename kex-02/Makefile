@@ -29,4 +29,27 @@ $(eval $(call AFS,AFS_KEX_C128,-DBWKEM128_INTERNAL_COMPAT -DBWKEM_C128_USE_ICCS_
 $(eval $(call AFS,AFS_KEX_C256,-DBWKEM_C256_USE_ICCS_AUXFUNC))
 $(eval $(call AFS,AFS_KEX_C512,-DBWKEM_C512_USE_ICCS_AUXFUNC))
 
+.PHONY: exploit clean-exploit
+all: reproduce_pfs_break reproduce_pfs_break_c256 reproduce_pfs_break_c512
+exploit: reproduce_pfs_break reproduce_pfs_break_c256 reproduce_pfs_break_c512
+
+reproduce_pfs_break: reproduce_pfs_break.c $(OBJS_AFS_KEX_C128)
+	$(CC) -O2 -std=gnu11 -Wall -Wextra -Wno-unused-parameter \
+		-DBWKEM128_INTERNAL_COMPAT -DBWKEM_C128_USE_ICCS_AUXFUNC \
+		-Isrc/AFS_KEX_C128 -o $@ reproduce_pfs_break.c $(OBJS_AFS_KEX_C128) -lm
+
+reproduce_pfs_break_c256: reproduce_pfs_break.c $(OBJS_AFS_KEX_C256)
+	$(CC) -O2 -std=gnu11 -Wall -Wextra -Wno-unused-parameter \
+		-DBWKEM_C256_USE_ICCS_AUXFUNC -Isrc/AFS_KEX_C256 \
+		-o $@ reproduce_pfs_break.c $(OBJS_AFS_KEX_C256) -lm
+
+reproduce_pfs_break_c512: reproduce_pfs_break.c $(OBJS_AFS_KEX_C512)
+	$(CC) -O2 -std=gnu11 -Wall -Wextra -Wno-unused-parameter \
+		-DBWKEM_C512_USE_ICCS_AUXFUNC -Isrc/AFS_KEX_C512 \
+		-o $@ reproduce_pfs_break.c $(OBJS_AFS_KEX_C512) -lm
+
+clean-exploit:
+	rm -f reproduce_pfs_break reproduce_pfs_break_c256 reproduce_pfs_break_c512
+clean: clean-exploit
+
 include ../api/link_finish.mk
