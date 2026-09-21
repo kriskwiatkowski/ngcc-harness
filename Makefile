@@ -6,12 +6,14 @@
 #   make status          re-aggregate results/ without re-running anything
 #   make reproduce       tools/reproduce.sh
 #   make check-vulnerabilities  validate stable issue IDs and checker coverage
+#   make check-reference-data   validate all specs and extracted parameters
 #   make manifest        (re)compute kat.sha256 manifests (needs the Test_Vectors present)
 #   make clean           remove all build outputs, libraries, results, harness
 
+NGCC1 ?= ../ngcc1
 CANDIDATES := $(sort $(patsubst %/Makefile,%,$(wildcard sign-*/Makefile kem-*/Makefile kex-*/Makefile hash-*/Makefile)))
 
-.PHONY: all harness tools exploits test status reproduce design-audit check-vulnerabilities manifest clean $(CANDIDATES) \
+.PHONY: all harness tools exploits test status reproduce design-audit check-vulnerabilities check-reference-data sync-reference-data manifest clean $(CANDIDATES) \
         $(addprefix test-,$(CANDIDATES)) $(addprefix manifest-,$(CANDIDATES)) $(addprefix clean-,$(CANDIDATES))
 
 all: harness tools $(CANDIDATES) exploits
@@ -53,6 +55,12 @@ design-audit:
 
 check-vulnerabilities:
 	python3 security/check_vulnerability_ids.py
+
+check-reference-data:
+	python3 tools/sync_reference_data.py --check
+
+sync-reference-data:
+	python3 tools/sync_reference_data.py $(NGCC1)
 
 manifest: $(addprefix manifest-,$(CANDIDATES))
 $(addprefix manifest-,$(CANDIDATES)): manifest-%: %

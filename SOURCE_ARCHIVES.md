@@ -5,7 +5,9 @@ modification from the official NICCS Round 1 submission archives identified in
 `downloads.csv`. Source and include files from the relevant reference
 implementation trees are retained. Submitted build systems, binaries, object
 files and bulky test-vector text files are excluded. The static parameter audit
-also retains the exact specification PDFs and source files that it cites.
+also retains the exact source files that it cites. The canonical submitted
+specification PDF and the extracted pseudocode/parameter review are retained for
+all 119 candidates, including candidates without a reported vulnerability.
 
 The `kat.sha256` file in each candidate directory records the expected digest
 of every test vector used by the harness. Thus `make test` verifies freshly

@@ -27,6 +27,7 @@ tools/reproduce.sh                   # run every reproducer and its controls
 tools/reproduce.sh kem-01            # or one candidate
 make design-audit                    # static specification/parameter findings
 make check-vulnerabilities           # validate all stable vulnerability IDs
+make check-reference-data            # validate all specs and parameter records
 ```
 
 `make -j8 all test` builds and KAT-tests every included candidate. Run
@@ -40,7 +41,9 @@ Makefile).
 api/            KAT harness (bin/ngcc_kat), link shim, generic make rules; api/README.md
 tools/          ngcc_attack.c reproducer, reproduce.sh runner; tools/README.md
 security/       complete vulnerability inventory, static audit and exact evidence
-<id>/           included reference sources, per-candidate Makefile,
+data/           machine-readable parameters, candidate metadata and spec provenance
+<id>/           specification and extracted pseudocode/parameters for every candidate;
+                included reference sources and a Makefile where needed by this harness,
                 kat.sha256 manifest, and patches/ where shipped source cannot
                 compile as-is; kex-02, sign-03 and kem-29 also have
                 candidate-local reproducer source
@@ -51,10 +54,12 @@ SOURCE_ARCHIVES.md  archive sizes and SHA-256 digests for included candidates
 ```
 
 Candidate ids (`sign-NN`, `kem-NN`, `kex-NN`, `hash-NN`) follow the numbering
-of the official Round 1 lists. Only candidates covered by a published report,
-or used as a control by `reproduce.sh`, have sources and build files here.
-Candidates used only by `security/design_parameter_audit.py` contain the exact
-specification and source files cited by that audit and are not build targets.
+of the official Round 1 lists. Every candidate has its submitted specification
+and a human-readable extraction of its algorithms and parameter tables. Every
+submitted implementation instance is also represented in `data/parameters.csv`.
+Only candidates covered by a published report, used as a reproducer control, or
+needed by the static audit have reference source files here; a directory without
+a Makefile is therefore a reference-data entry rather than a build target.
 Submitted test-vector files are not included: the compact `kat.sha256`
 manifests let `make test` compare freshly generated vectors to every required
 reference digest without retaining multi-gigabyte text files.

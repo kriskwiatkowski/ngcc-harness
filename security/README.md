@@ -8,9 +8,10 @@ make design-audit
 python3 security/design_parameter_audit.py --json
 ```
 
-The candidate directories without Makefiles contain only the exact submitted
-PDF and source files cited by these checks. They are evidence for the static
-audit, not incomplete build targets. See `DESIGN_PARAMETER_AUDIT.md` for the
+Candidate directories without Makefiles are reference-data entries, not
+incomplete build targets. Every one contains the submitted specification and
+extracted pseudocode/parameter tables; some additionally contain the exact
+source files cited by this audit. See `DESIGN_PARAMETER_AUDIT.md` for the
 classification rules and limits.
 
 `vulnerabilities.csv` is the complete public inventory of stable `xxx-yy-z`
