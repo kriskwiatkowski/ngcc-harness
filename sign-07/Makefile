@@ -38,7 +38,10 @@ ICCS_SIG_H := API_PKC/Implementations/Reference_Implementation/AlgorithmInstance
 define CS
 SHIMDEFS_$(1) := -DNGCC_INSTANCE_HEADER='"$(ICCS_SIG_H)"' -DNGCC_INSTANCE='"$(2)"' -DNGCC_NO_DRNG
 INC_$(1) := -Ipatches/common
-CFLAGS_$(1) := -fcommon
+# sampling.c contains enormous generated initializer lines whose out-of-range
+# literal warnings can expand to gigabytes of diagnostics on newer GCC. The
+# literals intentionally wrap to uint64_t; suppress candidate-source warnings.
+CFLAGS_$(1) := -fcommon -w
 $$(eval $$(call ngcc_instance,$(1),$(REF)/$(1)))
 endef
 

@@ -7,19 +7,18 @@ parameter set, driven through the official ICCS API exactly as the official
 `KAT_*.c` generators do, and the reported defects are demonstrated against
 those libraries by `tools/ngcc_attack`.
 
-Nothing shipped inside a submission is ever executed: no candidate Makefile,
+The required candidate reference sources are included in this repository.
+Nothing else shipped inside a submission is executed: no candidate Makefile,
 CMake, script or prebuilt binary is run. Each `<id>/Makefile` lists the sources
 explicitly and compiles them with fixed flags (see `api/README.md`, "Rules
 that every candidate Makefile follows").
 
-This repository is not affiliated with NICCS. The submission archives are
-not redistributed here; `download.sh` fetches them from niccs.org.cn.
+This repository is not affiliated with NICCS. `SOURCE_ARCHIVES.md` records the
+official submission archives from which the included source files were taken.
 
 ## Quick start
 
 ```sh
-IDS="kem-01 sign-07" ./download.sh   # fetch orig/<id>/orig.zip (all 119 without IDS)
-./extract.sh kem-01 sign-07          # unpack into <id>/, strip execute bits
 make -C api harness                  # bin/ngcc_kat, the KAT harness
 make -C tools                        # tools/ngcc_attack, the reproducer
 make -C kem-01 && make -C sign-07    # <id>/lib/lib<instance>.so
@@ -28,27 +27,31 @@ tools/reproduce.sh                   # run every reproducer and its controls
 tools/reproduce.sh kem-01            # or one candidate
 ```
 
-`make -j8 all test` builds and KAT-tests every candidate that has been
-extracted; `make reproduce` runs the full reproducer suite. Requirements: gcc,
-GNU make, python3, curl, bsdtar or unzip; some candidates need `-lgmp` or
-`-lcrypto` (recorded in their Makefile).
+`make -j8 all test` builds and KAT-tests every included candidate. Run
+`make reproduce` after the libraries have been built. Requirements: gcc, GNU
+make and python3; some candidates need `-lgmp` or `-lcrypto` (recorded in their
+Makefile).
 
 ## Layout
 
 ```
 api/            KAT harness (bin/ngcc_kat), link shim, generic make rules; api/README.md
 tools/          ngcc_attack.c reproducer, reproduce.sh runner; tools/README.md
-<id>/           per-candidate Makefile, kat.sha256 manifest, patches/ where a
-                shipped source cannot compile as-is; kem-29 also has its own
-                reproducer script
+<id>/           included reference sources, per-candidate Makefile,
+                kat.sha256 manifest, and patches/ where shipped source cannot
+                compile as-is; kem-29 also has its own reproducer script
 downloads.csv   candidate list with archive URLs from niccs.org.cn
-download.sh     fetches archives into orig/<id>/orig.zip (untracked)
-extract.sh      unpacks orig/<id>/orig.zip into <id>/ (untracked)
+download.sh     optional: fetch original archives into orig/<id>/orig.zip
+extract.sh      optional: unpack an original archive for provenance checks
+SOURCE_ARCHIVES.md  archive sizes and SHA-256 digests for included candidates
 ```
 
 Candidate ids (`sign-NN`, `kem-NN`, `kex-NN`, `hash-NN`) follow the numbering
 of the official Round 1 lists. Only candidates covered by a published report,
-or used as a control by `reproduce.sh`, have build files here.
+or used as a control by `reproduce.sh`, have sources and build files here.
+Submitted test-vector files are not included: the compact `kat.sha256`
+manifests let `make test` compare freshly generated vectors to every required
+reference digest without retaining multi-gigabyte text files.
 
 `api/drng.c`, `api/auxfunc.c` and the `api/API_PKC`, `api/API_CryptHash`
 trees are the official NICCS API package files, unmodified; the harness links

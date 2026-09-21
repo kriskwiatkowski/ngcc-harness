@@ -18,7 +18,7 @@ tools/reproduce.sh hash-09     # or just one candidate
 
 `reproduce.sh` exits 0 when every reported defect reproduced and every control
 stayed clean. A candidate whose libraries are not built is reported as `SKIP`
-rather than a failure.
+and makes the run fail, so an incomplete build cannot look successful.
 
 ## Reading the output
 

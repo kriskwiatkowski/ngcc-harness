@@ -42,16 +42,17 @@ are included, so `--full`/`--loop` runs verify by hash too. Regenerate with
 
 ```
 <id>/                 one folder per candidate (sign-NN, kem-NN, kex-NN, hash-NN),
-                      holding our Makefile, kat.sha256 and (where needed) patches/;
-                      the extracted submission is unpacked into it by ../extract.sh
-orig/<id>/orig.zip    the original archive, fetched by ../download.sh (untracked)
+                      holding the included reference sources, our Makefile,
+                      kat.sha256 and (where needed) patches/
+orig/<id>/orig.zip    optional original archive fetched by ../download.sh (untracked)
 api/                  harness sources, link headers, generic make rules
 bin/ngcc_kat          the harness binary (built, untracked)
 tools/                reproducers for the reported defects (see tools/README.md)
 ```
 
-Only our own files are tracked: the extracted submission trees, archives,
-libraries, build outputs and results are ignored (see `../.gitignore`).
+The curated reference source trees and harness files are tracked. Original
+archives, libraries, build outputs and results are ignored (see
+`../.gitignore`).
 
 ## Files
 

@@ -13,7 +13,8 @@
 # they run the same check against an unaffected candidate to show the test
 # itself is sound.
 #
-# Exit status: 0 if every finding reproduced and every control stayed clean.
+# Exit status: 0 if every selected finding reproduced, every selected control
+# stayed clean, and no required library was missing.
 
 set -u
 cd "$(dirname "$0")/.." || exit 2
@@ -85,10 +86,12 @@ run kem-22 "[control]" NOT-CONFIRMED kem-reject-mask kem-22/lib/libMithril-128.s
 
 echo
 echo "== kem-29 Polar-KEM: public-key-only shared-secret recovery (report: Critical) =="
-if [ -f kem-29/lib/libPolarKEM-128.so ]; then
-    python3 kem-29/reproduce_public_recovery.py || fail=$((fail + 1))
-else
-    echo "SKIP   kem-29 (build it: make -C kem-29)"; skipped=$((skipped + 1))
+if [ -z "$only" ] || [ "$only" = kem-29 ]; then
+    if [ -f kem-29/lib/libPolarKEM-128.so ]; then
+        python3 kem-29/reproduce_public_recovery.py || fail=$((fail + 1))
+    else
+        echo "SKIP   kem-29 (build it: make -C kem-29)"; skipped=$((skipped + 1))
+    fi
 fi
 
 echo
@@ -113,7 +116,7 @@ run kem-01  "[control]" NOT-CONFIRMED keygen-determinism kem-01/lib/libAigis-enc
 
 echo
 echo "== kem-17 HEP-QC / sign-33 VDOO: identical key in every fresh process (report: Critical) =="
-if [ -f kem-17/lib/libhep-qc-1.so ]; then
+if { [ -z "$only" ] || [ "$only" = kem-17 ]; } && [ -f kem-17/lib/libhep-qc-1.so ]; then
     a=$("$A" keygen-fresh kem-17/lib/libhep-qc-1.so 0x01 | awk '{print $NF}')
     b=$("$A" keygen-fresh kem-17/lib/libhep-qc-1.so 0x99 | awk '{print $NF}')
     c=$("$A" keygen-fresh kem-01/lib/libAigis-enc1.so 0x01 | awk '{print $NF}')
@@ -128,13 +131,13 @@ if [ -f kem-17/lib/libhep-qc-1.so ]; then
     else
         echo "UNEXPECTED control Aigis-enc1 keys identical"; fail=$((fail + 1))
     fi
-else
+elif [ -z "$only" ] || [ "$only" = kem-17 ]; then
     echo "SKIP   kem-17 (build it: make -C kem-17)"; skipped=$((skipped + 1))
 fi
 
 # VDOO advances an unseeded counter within a process, so successive in-process
 # keys differ; the defect shows as an identical FIRST key per fresh process.
-if [ -f sign-33/lib/libvdoo_128.so ]; then
+if { [ -z "$only" ] || [ "$only" = sign-33 ]; } && [ -f sign-33/lib/libvdoo_128.so ]; then
     a=$("$A" keygen-fresh sign-33/lib/libvdoo_128.so 0x01 | awk '{print $NF}')
     b=$("$A" keygen-fresh sign-33/lib/libvdoo_128.so 0x99 | awk '{print $NF}')
     if [ "$a" = "$b" ]; then
@@ -142,14 +145,14 @@ if [ -f sign-33/lib/libvdoo_128.so ]; then
     else
         echo "UNEXPECTED VDOO-128 keys differ across seeds"; fail=$((fail + 1))
     fi
-else
+elif [ -z "$only" ] || [ "$only" = sign-33 ]; then
     echo "SKIP   sign-33 (build it: make -C sign-33)"; skipped=$((skipped + 1))
 fi
 
 echo
-if [ "$fail" -eq 0 ]; then
-    echo "all reproducers behaved as reported ($skipped skipped for missing libraries)"
+if [ "$fail" -eq 0 ] && [ "$skipped" -eq 0 ]; then
+    echo "all reproducers behaved as reported"
 else
     echo "$fail reproducer(s) did NOT behave as reported ($skipped skipped)"
 fi
-exit $((fail > 0))
+exit $((fail > 0 || skipped > 0))

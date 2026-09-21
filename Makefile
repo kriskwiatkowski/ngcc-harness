@@ -1,6 +1,6 @@
 # NGCC Round 1 reproduction harness. See README.md, api/README.md, tools/README.md.
 #
-#   make -j8             build harness, reproducer and every extracted candidate
+#   make -j8             build harness, reproducer and every included candidate
 #   make -j8 test        run the KAT harness on every library, summary in results/
 #   make -C kem-01       one candidate (make -C kem-01 test: its KATs)
 #   make status          re-aggregate results/ without re-running anything
