@@ -97,6 +97,11 @@ run sign-01 "        " CONFIRMED sig-malleable sign-01/lib/libAigis-sig1.so
 run sign-07 "        " CONFIRMED sig-malleable sign-07/lib/libCS-128.so
 
 echo
+echo "== sign-25 SQIsign2D2: verifier verdict depends on stale stack state (report: Critical) =="
+run sign-25 "        " CONFIRMED sig-uninit-verdict sign-25/lib/libSQISign2Dsquare-Level2-eff_uncompressed.so
+run sign-25 "[control]" NOT-CONFIRMED sig-uninit-verdict sign-25/lib/libSQISign2Dsquare-Level2-eff_compressed.so
+
+echo
 echo "== sign-32 UVW: verifier accepts anything (report: Critical) =="
 run sign-32 "        " CONFIRMED sig-accept-all sign-32/lib/libUVW-128.so
 run sign-32 "        " CONFIRMED sig-accept-all sign-32/lib/libUVW-256.so

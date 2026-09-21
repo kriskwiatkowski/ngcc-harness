@@ -311,6 +311,49 @@ static int sig_accept_all(void)
         "modified message %s, all-zero signature %s", ms, zs);
 }
 
+/* SQIsign2D2 Level2-eff uncompressed: with NDEBUG, verifier decisions for a
+ * malformed signature depend on data left in its stack frame by an earlier
+ * call.  Fill the part of the stack reused by the verifier without relying on
+ * optimisation-sensitive dead stores. */
+__attribute__((noinline))
+static void scrub_stack(void)
+{
+    volatile unsigned char scratch[1024 * 1024];
+    for (size_t i = 0; i < sizeof scratch; i++) scratch[i] = 0;
+    __asm__ volatile ("" : : "r"(&scratch[0]) : "memory");
+}
+
+static int sig_uninit_verdict(void)
+{
+    const ngcc_meta_sig_t *m = (const ngcc_meta_sig_t *)g_meta;
+    ngcc_sig_keygen_fn kg = sym("sig_keygen");
+    ngcc_sig_sign_fn sg = sym("sig_sign");
+    ngcc_sig_verify_fn vf = sym("sig_verify");
+    static const unsigned char text[] = "NGCC low hanging fruit signature message";
+    unsigned char msg[sizeof text];
+    memcpy(msg, text, sizeof text);
+    unsigned long long mn = sizeof text - 1;
+    unsigned char *pk = calloc(m->pk_len, 1), *sk = calloc(m->sk_len, 1),
+                  *good = calloc(m->sn_len, 1), *zero = calloc(m->sn_len, 1);
+    unsigned long long pl = m->pk_len, sl = m->sk_len, nl = m->sn_len;
+    seed_lib(0x11);
+    if (kg(pk, &pl, sk, &sl) || sg(sk, sl, msg, mn, good, &nl)) {
+        fprintf(stderr, "keygen/sign failed\n"); exit(2);
+    }
+
+    int vr = vf(pk, pl, good, nl, msg, mn);
+    int primed = vf(pk, pl, zero, nl, msg, mn);
+    vr |= vf(pk, pl, good, nl, msg, mn);
+    scrub_stack();
+    int scrubbed = vf(pk, pl, zero, nl, msg, mn);
+    free(pk); free(sk); free(good); free(zero);
+    if (vr) { fprintf(stderr, "valid signature rejected\n"); exit(2); }
+    return verdict("sig-uninit-verdict", primed != scrubbed,
+        "identical all-zero signature: primed stack %s, scrubbed stack %s",
+        primed == 0 ? "ACCEPTED" : "rejected",
+        scrubbed == 0 ? "ACCEPTED" : "rejected");
+}
+
 /* ------------------------------------------------------- key generation */
 
 /* Galas / VDOO / HEP-QC: key generation ignores the seeded DRNG. Two different
@@ -380,6 +423,7 @@ static void usage(void)
       "  kem-ct-flip          <lib>            dead implicit rejection          (Aigis-Enc+)\n"
       "  sig-malleable        <lib>            SUF-CMA malleability             (Aigis-Sig+, CS)\n"
       "  sig-accept-all       <lib>            verifier accepts anything        (UVW)\n"
+      "  sig-uninit-verdict   <lib>            verdict depends on stale stack   (SQIsign2D2)\n"
       "  keygen-determinism   <lib>            seed ignored, same key           (Galas, VDOO)\n"
       "  keygen-fresh         <lib> <seed>     per-process key digest           (HEP-QC)\n");
     exit(2);
@@ -401,6 +445,7 @@ int main(int argc, char **argv)
     if (!strcmp(check, "kem-ct-flip"))        return kem_ct_flip();
     if (!strcmp(check, "sig-malleable"))      return sig_malleable();
     if (!strcmp(check, "sig-accept-all"))     return sig_accept_all();
+    if (!strcmp(check, "sig-uninit-verdict")) return sig_uninit_verdict();
     if (!strcmp(check, "keygen-determinism")) return keygen_determinism();
     if (!strcmp(check, "keygen-fresh"))       { if (argc < 4) usage(); return keygen_fresh(argv[3]); }
     usage();

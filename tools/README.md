@@ -42,6 +42,7 @@ than always firing.
 | `kem-reject-mask` | the rejection mask is not normalised to all-ones, so the returned value retains the low 7 bits of every byte of the valid secret | CheetahKEM (kem-09), LoongKEM (kem-18) |
 | `sig-malleable` | non-canonical trailing encoding bytes, so a distinct signature verifies for the same message (SUF-CMA) | Aigis-Sig+ (sign-01), CS (sign-07) |
 | `sig-accept-all` | the verifier discards its result and accepts anything | UVW (sign-32) |
+| `sig-uninit-verdict` | with `NDEBUG`, required verifier checks disappear and an all-zero signature's verdict depends on stale stack contents | SQIsign2D2 Level2-eff uncompressed (sign-25) |
 | `keygen-determinism` | key generation ignores the seeded DRNG, so two different seeds give the same key | Galas (sign-12) |
 | `keygen-fresh` | the seed is ignored but an internal generator advances within a process, so the defect shows as an identical *first* key in every fresh process | HEP-QC (kem-17), VDOO (sign-33) |
 
@@ -53,6 +54,12 @@ Polar-KEM has its own reproducer, `kem-29/reproduce_public_recovery.py`, because
 the break is specific: the submission ships `polarkem_recover_message(pk, ct, mu)`
 and `polarkem_derive_valid_secret(mu, ct, ss)`, which together recover the
 session key from public data alone. `reproduce.sh` runs it.
+
+The SQIsign2D2 witness deliberately verifies the identical all-zero signature
+twice: once after a genuine verification has primed the verifier's stack frame,
+and once after that stack region has been zeroed. The uncompressed Level2-eff
+instance accepts only the primed call. Its compressed counterpart is included
+as a control and rejects both calls.
 
 ## Crashes during a sweep
 
