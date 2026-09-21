@@ -119,6 +119,35 @@ if [ -z "$only" ] || [ "$only" = sign-03 ]; then
 fi
 
 echo
+echo "== sign-07 CS: universal forgery, challenge signs invisible to the verifier (report: Critical) =="
+if [ -z "$only" ] || [ "$only" = sign-07 ]; then
+    if [ -x sign-07/forgery_CS-128-scaled-tau3 ] &&
+       [ -f sign-07/lib/libCS-128-scaled-tau3.so ] &&
+       [ -x sign-07/forgery_CS-128 ]; then
+        # End-to-end: the same code at a runnable tau. The grind is C(n,tau)
+        # hash calls, so only the support size is scaled down; see
+        # sign-07/patches/scaled-tau3/params.h.
+        sign-07/forgery_CS-128-scaled-tau3 \
+            sign-07/lib/libCS-128-scaled-tau3.so --threads 8 | sed 's/^/          /' ||
+            fail=$((fail + 1))
+        # Submitted parameter sets: the free-transcript half of the attack
+        # confirms at full size, and the grind is run with a multi-million
+        # trial budget yet finds nothing, because C(n,tau) is
+        # 2^108.08 / 2^212.46 / 2^394.18 there.  That is the control: the same
+        # code distinguishes a reachable support space from an unreachable one.
+        for i in CS-128 CS-256 CS-512; do
+            [ -f "sign-07/lib/lib$i.so" ] || continue
+            sign-07/forgery_$i "sign-07/lib/lib$i.so" \
+                --trials 2000000 --threads 8 --control |
+                sed 's/^ATTACK sig-forge-grind/[control] ATTACK sig-forge-grind/;t;s/^/          /' ||
+                fail=$((fail + 1))
+        done
+    else
+        echo "SKIP   sign-07 (build it: make -C sign-07 exploit)"; skipped=$((skipped + 1))
+    fi
+fi
+
+echo
 echo "== sign-01 Aigis-Sig+ / sign-07 CS: SUF-CMA malleability (report: High) =="
 run sign-01 "        " CONFIRMED sig-malleable sign-01/lib/libAigis-sig1.so
 run sign-07 "        " CONFIRMED sig-malleable sign-07/lib/libCS-128.so
