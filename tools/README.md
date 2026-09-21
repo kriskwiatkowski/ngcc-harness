@@ -42,6 +42,8 @@ than always firing.
 | `kem-reject-mask` | the rejection mask is not normalised to all-ones, so the returned value retains the low 7 bits of every byte of the valid secret | CheetahKEM (kem-09), LoongKEM (kem-18) |
 | `kex-pfs-recovery` | recorded ciphertexts plus later compromise of the API long-term keys recover the exact completed-session key | AFS-KEX (kex-02) |
 | `sign-fors-forgery` | repeated two-bit FORS addressing permits an adaptive chosen-message signature forgery | CEDRUS+C 160f (sign-03) |
+| `sig-forge-transcript` | every verifier condition except the hash equality holds for an attacker-chosen challenge support with z=0 | CS (sign-07) |
+| `sig-forge-grind` | universal forgery: the verifier only sees `c mod 2`, so the grind is C(n,tau), not C(n,tau)*2^tau | CS (sign-07) |
 | `sig-malleable` | non-canonical trailing encoding bytes, so a distinct signature verifies for the same message (SUF-CMA) | Aigis-Sig+ (sign-01), CS (sign-07) |
 | `sig-hint-padding` | unused fixed-size hint slots are not checked, so a distinct encoding verifies for the same message (SUF-CMA) | MORNING-ATLAS (sign-15) |
 | `sig-accept-all` | the verifier discards its result and accepts anything | UVW (sign-32) |
