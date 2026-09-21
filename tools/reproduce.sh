@@ -95,6 +95,16 @@ if [ -z "$only" ] || [ "$only" = kem-29 ]; then
 fi
 
 echo
+echo "== sign-03 CEDRUS+C: adaptive FORS leaf-accumulation forgery (report: Critical) =="
+if [ -z "$only" ] || [ "$only" = sign-03 ]; then
+    if [ -x sign-03/reproduce_forgery ] && [ -f sign-03/lib/libCEDRUSC-160f.so ]; then
+        sign-03/reproduce_forgery sign-03/lib/libCEDRUSC-160f.so || fail=$((fail + 1))
+    else
+        echo "SKIP   sign-03 (build it: make -C sign-03 exploit)"; skipped=$((skipped + 1))
+    fi
+fi
+
+echo
 echo "== sign-01 Aigis-Sig+ / sign-07 CS: SUF-CMA malleability (report: High) =="
 run sign-01 "        " CONFIRMED sig-malleable sign-01/lib/libAigis-sig1.so
 run sign-07 "        " CONFIRMED sig-malleable sign-07/lib/libCS-128.so

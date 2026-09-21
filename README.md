@@ -39,7 +39,8 @@ api/            KAT harness (bin/ngcc_kat), link shim, generic make rules; api/R
 tools/          ngcc_attack.c reproducer, reproduce.sh runner; tools/README.md
 <id>/           included reference sources, per-candidate Makefile,
                 kat.sha256 manifest, and patches/ where shipped source cannot
-                compile as-is; kem-29 also has its own reproducer script
+                compile as-is; sign-03 and kem-29 also have candidate-local
+                reproducer source
 downloads.csv   candidate list with archive URLs from niccs.org.cn
 download.sh     optional: fetch original archives into orig/<id>/orig.zip
 extract.sh      optional: unpack an original archive for provenance checks

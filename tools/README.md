@@ -40,6 +40,7 @@ than always firing.
 | `hash-prefix` | no domain separation, so the short digest is a byte-exact prefix of the long one | Megascon (hash-18), Mozi (hash-20) |
 | `kem-ct-flip` | the FO implicit-rejection branch is dead code, so modified ciphertexts still return the original shared secret | Aigis-Enc+ (kem-01) |
 | `kem-reject-mask` | the rejection mask is not normalised to all-ones, so the returned value retains the low 7 bits of every byte of the valid secret | CheetahKEM (kem-09), LoongKEM (kem-18) |
+| `sign-fors-forgery` | repeated two-bit FORS addressing permits an adaptive chosen-message signature forgery | CEDRUS+C 160f (sign-03) |
 | `sig-malleable` | non-canonical trailing encoding bytes, so a distinct signature verifies for the same message (SUF-CMA) | Aigis-Sig+ (sign-01), CS (sign-07) |
 | `sig-accept-all` | the verifier discards its result and accepts anything | UVW (sign-32) |
 | `sig-uninit-verdict` | with `NDEBUG`, required verifier checks disappear and an all-zero signature's verdict depends on stale stack contents | SQIsign2D2 Level2-eff uncompressed (sign-25) |
@@ -54,6 +55,14 @@ Polar-KEM has its own reproducer, `kem-29/reproduce_public_recovery.py`, because
 the break is specific: the submission ships `polarkem_recover_message(pk, ct, mu)`
 and `polarkem_derive_valid_secret(mu, ct, ss)`, which together recover the
 session key from public data alone. `reproduce.sh` runs it.
+
+CEDRUS+C has a candidate-local `sign-03/reproduce_forgery` driver. It obtains
+1,000 signatures on distinct chosen messages, catalogs the disclosed FORS
+leaves at the implementation's four reachable bottom addresses, and grinds a
+digest for a message never sent to the signing oracle. It assembles the new
+FORS signature from disclosures belonging to different oracle signatures,
+reuses the fixed address's hypertree suffix, and requires the submitted
+verifier to accept the result.
 
 The SQIsign2D2 witness deliberately verifies the identical all-zero signature
 twice: once after a genuine verification has primed the verifier's stack frame,
@@ -72,9 +81,9 @@ Linux and is confined to this test tool.
 
 ## Scope
 
-These demonstrate the reported behaviour. They are not cryptanalysis: none of
-them attacks a hardness assumption, and a `CONFIRMED` line means only that the
-described defect is present in the built library. Findings that are real but
-have no cheap runnable witness (for example CreTAKE's 64-bit ephemeral secret,
-which needs about 2^64 offline work) are documented in the corresponding
-`report.md` and `pseudocode.md` instead.
+These demonstrate the reported behaviour against source-built libraries. They
+do not attack the candidates' underlying hardness assumptions; the CEDRUS+C
+driver instead exploits broken composition to produce a complete chosen-message
+forgery. Findings that are real but have no cheap runnable witness (for example
+CreTAKE's 64-bit ephemeral secret, which needs about 2^64 offline work) are
+documented in the corresponding `report.md` and `pseudocode.md` instead.

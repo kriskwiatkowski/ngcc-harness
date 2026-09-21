@@ -21,4 +21,20 @@ $(eval $(call ngcc_instance,CEDRUSC-384s,$(REF)/CEDRUSC-384s))
 $(eval $(call ngcc_instance,CEDRUSC-512f,$(REF)/CEDRUSC-512f))
 $(eval $(call ngcc_instance,CEDRUSC-512s,$(REF)/CEDRUSC-512s))
 
+FORGE_SRC := $(REF)/CEDRUSC-160f
+
+.PHONY: exploit clean-exploit
+all: reproduce_forgery
+exploit: reproduce_forgery
+
+reproduce_forgery: reproduce_forgery.c ../api/link_common.h ../api/link_sig.h \
+                   $(FORGE_SRC)/auxfunc.c $(FORGE_SRC)/auxfunc.h
+	$(CC) -O2 -std=gnu11 -Wall -Wextra -Wno-unused-parameter \
+		-I../api -I$(FORGE_SRC) -o $@ reproduce_forgery.c \
+		$(FORGE_SRC)/auxfunc.c -ldl -lm
+
+clean-exploit:
+	rm -f reproduce_forgery
+clean: clean-exploit
+
 include ../api/link_finish.mk

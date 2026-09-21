@@ -10,10 +10,10 @@
 
 CANDIDATES := $(sort $(patsubst %/Makefile,%,$(wildcard sign-*/Makefile kem-*/Makefile kex-*/Makefile hash-*/Makefile)))
 
-.PHONY: all harness tools test status reproduce manifest clean $(CANDIDATES) \
+.PHONY: all harness tools exploits test status reproduce manifest clean $(CANDIDATES) \
         $(addprefix test-,$(CANDIDATES)) $(addprefix manifest-,$(CANDIDATES)) $(addprefix clean-,$(CANDIDATES))
 
-all: harness tools $(CANDIDATES)
+all: harness tools $(CANDIDATES) exploits
 
 harness:
 	$(MAKE) -C api harness
@@ -23,6 +23,9 @@ tools:
 
 $(CANDIDATES): harness | results
 	@$(MAKE) --no-print-directory -C $@ libs > results/build-$@.log 2>&1 && echo "BUILD $@ ok" || { echo "BUILD $@ FAILED (results/build-$@.log)"; }
+
+exploits: sign-03
+	@$(MAKE) --no-print-directory -C sign-03 exploit
 
 test: $(addprefix test-,$(CANDIDATES))
 	@$(MAKE) --no-print-directory status
