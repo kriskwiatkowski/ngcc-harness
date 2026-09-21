@@ -5,12 +5,13 @@
 #   make -C kem-01       one candidate (make -C kem-01 test: its KATs)
 #   make status          re-aggregate results/ without re-running anything
 #   make reproduce       tools/reproduce.sh
+#   make check-vulnerabilities  validate stable issue IDs and checker coverage
 #   make manifest        (re)compute kat.sha256 manifests (needs the Test_Vectors present)
 #   make clean           remove all build outputs, libraries, results, harness
 
 CANDIDATES := $(sort $(patsubst %/Makefile,%,$(wildcard sign-*/Makefile kem-*/Makefile kex-*/Makefile hash-*/Makefile)))
 
-.PHONY: all harness tools exploits test status reproduce manifest clean $(CANDIDATES) \
+.PHONY: all harness tools exploits test status reproduce design-audit check-vulnerabilities manifest clean $(CANDIDATES) \
         $(addprefix test-,$(CANDIDATES)) $(addprefix manifest-,$(CANDIDATES)) $(addprefix clean-,$(CANDIDATES))
 
 all: harness tools $(CANDIDATES) exploits
@@ -45,6 +46,12 @@ status: | results
 
 reproduce: tools
 	tools/reproduce.sh
+
+design-audit:
+	python3 security/design_parameter_audit.py
+
+check-vulnerabilities:
+	python3 security/check_vulnerability_ids.py
 
 manifest: $(addprefix manifest-,$(CANDIDATES))
 $(addprefix manifest-,$(CANDIDATES)): manifest-%: %

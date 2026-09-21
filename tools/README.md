@@ -1,10 +1,18 @@
 # Reproducers
 
-Runnable witnesses for every defect reported in the `*/report.md` files. Each
+Runnable witnesses for report findings that admit a low-cost experiment. Each
 one drives a candidate's own reference implementation through the uniform ABI
 described in `api/README.md`. No submission file is modified and no shipped
 binary is executed; the libraries are compiled from the candidates' own sources
-by the per-candidate Makefiles.
+by the per-candidate Makefiles. Information-theoretic parameter ceilings use
+`security/design_parameter_audit.py` instead and do not attempt their generic
+`2^128` or `2^256` attacks.
+
+Each issue has a stable ID of the form `xxx-yy-z`: `xxx-yy` is the candidate
+algorithm ID and `z` is that candidate's sequential report number. The runner
+prints the relevant ID beside each runtime witness. The complete list, including
+findings without a runnable witness, is `security/vulnerabilities.csv`; run
+`make check-vulnerabilities` to validate its IDs and checker coverage.
 
 ## Running everything
 
@@ -16,7 +24,7 @@ tools/reproduce.sh             # run every reproducer
 tools/reproduce.sh hash-09     # or just one candidate
 ```
 
-`reproduce.sh` exits 0 when every reported defect reproduced and every control
+`reproduce.sh` exits 0 when every supported runtime witness reproduced and every control
 stayed clean. A candidate whose libraries are not built is reported as `SKIP`
 and makes the run fail, so an incomplete build cannot look successful.
 
