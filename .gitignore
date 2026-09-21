@@ -1,0 +1,14 @@
+# Tracked: our Makefiles, kat.sha256 manifests, patches/, reproducers, api/, tools/.
+# Untracked: downloaded archives, extracted submission trees, every build output.
+/*/*
+!/api/**
+!/tools/**
+/tools/ngcc_attack
+!/*/Makefile
+!/*/kat.sha256
+!/*/patches/
+!/*/patches/**
+!/*/reproduce_*.py
+/orig/
+/bin/
+/results/

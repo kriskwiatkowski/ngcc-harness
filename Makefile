@@ -1,0 +1,53 @@
+# NGCC Round 1 reproduction harness. See README.md, api/README.md, tools/README.md.
+#
+#   make -j8             build harness, reproducer and every extracted candidate
+#   make -j8 test        run the KAT harness on every library, summary in results/
+#   make -C kem-01       one candidate (make -C kem-01 test: its KATs)
+#   make status          re-aggregate results/ without re-running anything
+#   make reproduce       tools/reproduce.sh
+#   make manifest        (re)compute kat.sha256 manifests (needs the Test_Vectors present)
+#   make clean           remove all build outputs, libraries, results, harness
+
+CANDIDATES := $(sort $(patsubst %/Makefile,%,$(wildcard sign-*/Makefile kem-*/Makefile kex-*/Makefile hash-*/Makefile)))
+
+.PHONY: all harness tools test status reproduce manifest clean $(CANDIDATES) \
+        $(addprefix test-,$(CANDIDATES)) $(addprefix manifest-,$(CANDIDATES)) $(addprefix clean-,$(CANDIDATES))
+
+all: harness tools $(CANDIDATES)
+
+harness:
+	$(MAKE) -C api harness
+
+tools:
+	$(MAKE) -C tools
+
+$(CANDIDATES): harness | results
+	@$(MAKE) --no-print-directory -C $@ libs > results/build-$@.log 2>&1 && echo "BUILD $@ ok" || { echo "BUILD $@ FAILED (results/build-$@.log)"; }
+
+test: $(addprefix test-,$(CANDIDATES))
+	@$(MAKE) --no-print-directory status
+
+$(addprefix test-,$(CANDIDATES)): test-%: % | results
+	@$(MAKE) --no-print-directory -C $* test > results/test-$*.log 2>&1; tail -1 results/test-$*.log
+
+results:
+	mkdir -p results
+
+status: | results
+	@cat $(wildcard $(addsuffix /results/summary.tsv,$(CANDIDATES))) > results/summary.tsv 2>/dev/null; \
+	 echo "candidates with Makefile: $(words $(CANDIDATES))"; \
+	 echo "instances tested: $$(wc -l < results/summary.tsv)"; \
+	 awk '{print $$4}' results/summary.tsv | sort | uniq -c | sort -rn
+
+reproduce: tools
+	tools/reproduce.sh
+
+manifest: $(addprefix manifest-,$(CANDIDATES))
+$(addprefix manifest-,$(CANDIDATES)): manifest-%: %
+	@$(MAKE) --no-print-directory -C $* manifest 2>&1 | tail -1
+
+clean: $(addprefix clean-,$(CANDIDATES))
+	$(MAKE) -C tools clean
+	rm -rf results bin
+$(addprefix clean-,$(CANDIDATES)): clean-%:
+	@$(MAKE) --no-print-directory -C $* clean
