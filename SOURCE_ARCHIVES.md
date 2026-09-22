@@ -4,14 +4,17 @@ The candidate reference source files in this repository were copied without
 modification from the official NICCS Round 1 submission archives identified in
 `downloads.csv`. Source and include files from the relevant reference
 implementation trees are retained. Submitted build systems, binaries, object
-files, PDFs and bulky test-vector text files are excluded.
+files and bulky test-vector text files are excluded. The static parameter audit
+also retains the exact source files that it cites. The canonical submitted
+specification PDF and the extracted pseudocode/parameter review are retained for
+all 119 candidates, including candidates without a reported vulnerability.
 
 The `kat.sha256` file in each candidate directory records the expected digest
 of every test vector used by the harness. Thus `make test` verifies freshly
 generated vectors without storing the original multi-gigabyte vector corpus.
 
-The following sizes and SHA-256 values identify the complete original ZIPs.
-They are not required for a normal build.
+The following SHA-256 values, and sizes where recorded, identify the complete
+original ZIPs. They are not required for a normal build.
 
 | id | bytes | SHA-256 |
 |---|---:|---|
@@ -23,6 +26,8 @@ They are not required for a normal build.
 | hash-20 | 34365493 | `f68c6b73ff4ac064e6bb8a9b74c4bd8a929594c3c48c89e1a65941e03676ea30` |
 | kem-01 | 13910031 | `1c053133175cd189fd9f0e058bde684168f55a6fc3871de2a755404a08990186` |
 | kem-09 | 8357751 | `fc321e46bac9c387535e2053bed560eac3d3cd88ba9bebc154f5bf68dd47dcd1` |
+| kem-11 | — | `8fc838488ac0849d4c6afd161f8b9742c7a8b9a330bc3b79df70ced7e2d1d5e2` |
+| kem-12 | — | `512caaf5fa04ea5ab51fb5eeee9e81f8c7c7c430b60727130067634bfb674d01` |
 | kem-17 | 789966981 | `3780991127f49b6397b4182d32b35ab7a6359bf825a707e90df0f809beeb3790` |
 | kem-18 | 8583603 | `a6e5070647a40e7de1bf6e5b085dc1d6423c003a409864fdb303d87f881cec0b` |
 | kem-22 | 13023595 | `9fed68e7923c6bc9ede072183f7d3983058f88deec5534e779ed2200ee4f7f9f` |
@@ -32,12 +37,20 @@ They are not required for a normal build.
 | kem-39 | 5743165 | `9b0bad96e9bc836b0ff811492a70891066df5634ee47fda4d1518dccd4e09927` |
 | kex-02 | 9752914 | `7d902107b74870e512c84da82c6bfb386633ca864ddc7df2f7b0b183511f983a` |
 | kex-03 | 17998433 | `0b356074741bc20fa82132719e1678e001083b9746f5c4c582425b727b511741` |
+| kex-05 | 24191394 | `e9e7ff0fb453a371634797febeaeac7c1f081b5fd2438204787c763667482ec4` |
+| kex-06 | — | `79b53ff726121ccb1ce970003c06b605e973c4e4f452dbe780e70cd4c40ca018` |
 | kex-07 | 12680002 | `da75005b4060167f25125cbd1a769ed872c8b6fcb770fe0827a599e44536e8e6` |
 | sign-01 | 17707823 | `88242576a3ae8f9d090b0c9045020f04ee9b5ae828e01b839f25267959e9c7ea` |
+| sign-02 | — | `698fbe834279a4100a66c20f3e0b634c738e1150936acf74b55efc6db6975e8d` |
 | sign-03 | 18695378 | `a31de849cf0a0703a4e57decbdf4d97b100d00dc74756feaded2c04a7593e110` |
+| sign-06 | — | `ce88066506fe9b58c300b3ca51462c7a8350484d88ad5b8a9c9f17b5152ca820` |
 | sign-07 | 13640373 | `c790d31cd4a288990f3d692381ed721a06641938a02dfc2e0435b7d323475cef` |
+| sign-08 | — | `1846cfe63f0cef83e2e0ca21f5dcadce3c4b16da33713957be6d156e2a9e6e95` |
 | sign-12 | 41464713 | `98d57af868fa10d74b2c0656e565aa14a42ff902646d6fc440ffb7355b75342c` |
 | sign-15 | 12010922 | `c796b106a7d43b2b3d6110ec2be426aa321cc7336f39a2cc027b2d6e8b4cc8c1` |
+| sign-18 | — | `e34f18832e968681dd0c51ce0d4b29d80e01ad29daa83dfb805718b76fdffa80` |
+| sign-22 | — | `7b509d21c6674bc23751b8743cb7c2a4a07ee295fafe04e2fa95c0613160bdfd` |
 | sign-25 | 19195437 | `cf635de5eebbdeb7b2212e84f349da4ca878889e0a4a59b463d0c8cdfdb8eeab` |
+| sign-31 | — | `7ab1effc5fe911c6ab9483ca44a9d9f6d6d911b03eee9f2873b384d97f9aee1d` |
 | sign-32 | 1326858513 | `bbfa8dad5ee57083578b50b9937e773e6158f72646e825da3d3265cc00cb1294` |
 | sign-33 | 396850232 | `4b7bb0f15388b395b9308ae480f25622105a734f0ab4a6bd16398438c4b9752a` |

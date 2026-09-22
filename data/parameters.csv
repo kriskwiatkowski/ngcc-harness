@@ -1,0 +1,587 @@
+ID;Type;Algorithm;Instance;Variant;SourceDirectory;PublicKeyBytes;SecretKeyBytes;CiphertextBytes;SharedSecretBytes;SignatureBytes;Passes;InitiatorStateBytes;ResponderStateBytes;TotalMessageBytes;DigestBits;DigestBytes
+hash-01;hash;AFS-TrEDM;AFS-TrEDM-1024;Reference_Implementation;AFS-TrEDM/Implementations/Reference_Implementation/AFS-TrEDM-1024;;;;;;;;;;1024;128
+hash-01;hash;AFS-TrEDM;AFS-TrEDM-512;Reference_Implementation;AFS-TrEDM/Implementations/Reference_Implementation/AFS-TrEDM-512;;;;;;;;;;512;64
+hash-01;hash;AFS-TrEDM;AFS-TrEDM-768;Reference_Implementation;AFS-TrEDM/Implementations/Reference_Implementation/AFS-TrEDM-768;;;;;;;;;;768;96
+hash-02;hash;AXIS;AXIS-1024;Reference_Implementation;AXIS/Implementations/Reference_Implementation/AXIS-1024;;;;;;;;;;1024;128
+hash-02;hash;AXIS;AXIS-512;Reference_Implementation;AXIS/Implementations/Reference_Implementation/AXIS-512;;;;;;;;;;512;64
+hash-02;hash;AXIS;AXIS-768;Reference_Implementation;AXIS/Implementations/Reference_Implementation/AXIS-768;;;;;;;;;;768;96
+hash-03;hash;C Hash;CHash_1024;Reference_Implementation;C Hash/Implementations/Reference_Implementation/CHash_1024;;;;;;;;;;1024;128
+hash-03;hash;C Hash;CHash_512;Reference_Implementation;C Hash/Implementations/Reference_Implementation/CHash_512;;;;;;;;;;512;64
+hash-04;hash;CHAMP;CHAMP-1024;Reference_Implementation;CHAMP/Implementations and Test_Vectors/API_CryptHash/Implementations/Reference_Implementation/CHAMP-1024;;;;;;;;;;1024;128
+hash-04;hash;CHAMP;CHAMP-512;Reference_Implementation;CHAMP/Implementations and Test_Vectors/API_CryptHash/Implementations/Reference_Implementation/CHAMP-512;;;;;;;;;;512;64
+hash-05;hash;uHash;uHash-1024;Reference_Implementation;uHash/Implementations/3 实现代码/Implementations/Reference_Implementation/uHash-1024;;;;;;;;;;1024;128
+hash-05;hash;uHash;uHash-512;Reference_Implementation;uHash/Implementations/3 实现代码/Implementations/Reference_Implementation/uHash-512;;;;;;;;;;512;64
+hash-05;hash;uHash;uHash-768;Reference_Implementation;uHash/Implementations/3 实现代码/Implementations/Reference_Implementation/uHash-768;;;;;;;;;;768;96
+hash-06;hash;Cuishen;Cuishen-1024;Reference_Implementation;Cuishen/Implementations/Reference_Implementation/Cuishen-1024;;;;;;;;;;1024;128
+hash-06;hash;Cuishen;Cuishen-512;Reference_Implementation;Cuishen/Implementations/Reference_Implementation/Cuishen-512;;;;;;;;;;512;64
+hash-06;hash;Cuishen;Cuishen-768;Reference_Implementation;Cuishen/Implementations/Reference_Implementation/Cuishen-768;;;;;;;;;;768;96
+hash-07;hash;Dragon;Dragon-1024;Reference_Implementation;Dragon/Implementations and Test_vector/Dragon-x86/Implementations/Reference_Implementation/Dragon-1024;;;;;;;;;;1024;128
+hash-07;hash;Dragon;Dragon-512;Reference_Implementation;Dragon/Implementations and Test_vector/Dragon-x86/Implementations/Reference_Implementation/Dragon-512;;;;;;;;;;512;64
+hash-07;hash;Dragon;Dragon-768;Reference_Implementation;Dragon/Implementations and Test_vector/Dragon-x86/Implementations/Reference_Implementation/Dragon-768;;;;;;;;;;768;96
+hash-07;hash;Dragon;Dragon-XOF-256;Reference_Implementation;Dragon/Implementations and Test_vector/Dragon-x86/Implementations/Reference_Implementation/Dragon-XOF-256;;;;;;;;;;1280;160
+hash-07;hash;Dragon;Dragon-XOF-384;Reference_Implementation;Dragon/Implementations and Test_vector/Dragon-x86/Implementations/Reference_Implementation/Dragon-XOF-384;;;;;;;;;;1152;144
+hash-07;hash;Dragon;Dragon-XOF-512;Reference_Implementation;Dragon/Implementations and Test_vector/Dragon-x86/Implementations/Reference_Implementation/Dragon-XOF-512;;;;;;;;;;1024;128
+hash-08;hash;Duet;Duet-1024;Reference_Implementation;Duet/Implementations/Reference_Implementation/Duet-1024;;;;;;;;;;1024;128
+hash-08;hash;Duet;Duet-512;Reference_Implementation;Duet/Implementations/Reference_Implementation/Duet-512;;;;;;;;;;512;64
+hash-08;hash;Duet;Duet-768;Reference_Implementation;Duet/Implementations/Reference_Implementation/Duet-768;;;;;;;;;;768;96
+hash-09;hash;Eijen;Eijen-1024;Reference_Implementation;Eijen/Implementations/Reference_Implementation/Eijen-1024;;;;;;;;;;1024;128
+hash-09;hash;Eijen;Eijen-256;Reference_Implementation;Eijen/Implementations/Reference_Implementation/Eijen-256;;;;;;;;;;256;32
+hash-09;hash;Eijen;Eijen-384;Reference_Implementation;Eijen/Implementations/Reference_Implementation/Eijen-384;;;;;;;;;;384;48
+hash-09;hash;Eijen;Eijen-512;Reference_Implementation;Eijen/Implementations/Reference_Implementation/Eijen-512;;;;;;;;;;512;64
+hash-09;hash;Eijen;Eijen-768;Reference_Implementation;Eijen/Implementations/Reference_Implementation/Eijen-768;;;;;;;;;;768;96
+hash-10;hash;FEILIAN;FEILIAN1024;Reference_Implementation;FEILIAN/Implementations/Reference_Implementation/FEILIAN1024;;;;;;;;;;1024;128
+hash-10;hash;FEILIAN;FEILIAN512;Reference_Implementation;FEILIAN/Implementations/Reference_Implementation/FEILIAN512;;;;;;;;;;512;64
+hash-10;hash;FEILIAN;FEILIAN768;Reference_Implementation;FEILIAN/Implementations/Reference_Implementation/FEILIAN768;;;;;;;;;;768;96
+hash-11;hash;Garnet;Garnet_1024;Reference_Implementation;Garnet/Implementations/API_CryptHash/Implementations/Reference_Implementation/Garnet;;;;;;;;;;1024;128
+hash-11;hash;Garnet;Garnet_1024_DM4x4;Reference_Implementation;Garnet/Implementations/API_CryptHash/Implementations/Reference_Implementation/Garnet;;;;;;;;;;1024;128
+hash-11;hash;Garnet;Garnet_512_Cap1024;Reference_Implementation;Garnet/Implementations/API_CryptHash/Implementations/Reference_Implementation/Garnet;;;;;;;;;;512;64
+hash-11;hash;Garnet;Garnet_512_Cap512;Reference_Implementation;Garnet/Implementations/API_CryptHash/Implementations/Reference_Implementation/Garnet;;;;;;;;;;512;64
+hash-11;hash;Garnet;Garnet_512_Cap640;Reference_Implementation;Garnet/Implementations/API_CryptHash/Implementations/Reference_Implementation/Garnet;;;;;;;;;;512;64
+hash-11;hash;Garnet;Garnet_512_Cap768;Reference_Implementation;Garnet/Implementations/API_CryptHash/Implementations/Reference_Implementation/Garnet;;;;;;;;;;512;64
+hash-11;hash;Garnet;Garnet_512_Cap896;Reference_Implementation;Garnet/Implementations/API_CryptHash/Implementations/Reference_Implementation/Garnet;;;;;;;;;;512;64
+hash-11;hash;Garnet;Garnet_768;Reference_Implementation;Garnet/Implementations/API_CryptHash/Implementations/Reference_Implementation/Garnet;;;;;;;;;;768;96
+hash-12;hash;Iphe;Iphe-1024;Reference_Implementation;Iphe/Implementations/Reference_Implementation/Iphe-1024;;;;;;;;;;1024;128
+hash-12;hash;Iphe;Iphe-512;Reference_Implementation;Iphe/Implementations/Reference_Implementation/Iphe-512;;;;;;;;;;512;64
+hash-12;hash;Iphe;Iphe-768;Reference_Implementation;Iphe/Implementations/Reference_Implementation/Iphe-768;;;;;;;;;;768;96
+hash-13;hash;JuziHash;JuziHash-1024;Reference_Implementation;Juzi/Implementations/Implementation/Reference_Implementation/JuziHash-1024;;;;;;;;;;1024;128
+hash-13;hash;JuziHash;JuziHash-512;Reference_Implementation;Juzi/Implementations/Implementation/Reference_Implementation/JuziHash-512;;;;;;;;;;512;64
+hash-14;hash;Laurus;laurus_1024;Reference_Implementation;Laurus/Implementations/Reference_Implementation/Laurus-1024;;;;;;;;;;1024;128
+hash-14;hash;Laurus;laurus_512;Reference_Implementation;Laurus/Implementations/Reference_Implementation/Laurus-512;;;;;;;;;;512;64
+hash-14;hash;Laurus;laurus_768;Reference_Implementation;Laurus/Implementations/Reference_Implementation/Laurus-768;;;;;;;;;;768;96
+hash-14;hash;Laurus;laurus_xof;Reference_Implementation;Laurus/Implementations/Reference_Implementation/Laurus-XOF;;;;;;;;;;2048;256
+hash-15;hash;Litchi;litchi_1024;Reference_Implementation;Litchi/Implementations/Reference_Implementation/Litchi-1024;;;;;;;;;;1024;128
+hash-15;hash;Litchi;litchi_512;Reference_Implementation;Litchi/Implementations/Reference_Implementation/Litchi-512;;;;;;;;;;512;64
+hash-15;hash;Litchi;litchi_768;Reference_Implementation;Litchi/Implementations/Reference_Implementation/Litchi-768;;;;;;;;;;768;96
+hash-15;hash;Litchi;litchi_xof;Reference_Implementation;Litchi/Implementations/Reference_Implementation/Litchi-XOF;;;;;;;;;;1024;128
+hash-16;hash;LLH;LLH-1024;Reference_Implementation;LLH/Implementations and Test_Vectors/LLH_C/API_CryptHash/Implementations/Reference_Implementation/LLH-1024;;;;;;;;;;1024;128
+hash-16;hash;LLH;LLH-256;Reference_Implementation;LLH/Implementations and Test_Vectors/LLH_C/API_CryptHash/Implementations/Reference_Implementation/LLH-256;;;;;;;;;;256;32
+hash-16;hash;LLH;LLH-512;Reference_Implementation;LLH/Implementations and Test_Vectors/LLH_C/API_CryptHash/Implementations/Reference_Implementation/LLH-512;;;;;;;;;;512;64
+hash-16;hash;LLH;LLH-768;Reference_Implementation;LLH/Implementations and Test_Vectors/LLH_C/API_CryptHash/Implementations/Reference_Implementation/LLH-768;;;;;;;;;;768;96
+hash-17;hash;MasterCube;MasterCube-1024;Reference_Implementation;MasterCube/Implementations/Reference_Implementation/MasterCube-1024;;;;;;;;;;1024;128
+hash-17;hash;MasterCube;MasterCube-512;Reference_Implementation;MasterCube/Implementations/Reference_Implementation/MasterCube-512;;;;;;;;;;512;64
+hash-17;hash;MasterCube;MasterCube-768;Reference_Implementation;MasterCube/Implementations/Reference_Implementation/MasterCube-768;;;;;;;;;;768;96
+hash-18;hash;Megascon;MEGASCON-1024;Reference_Implementation;Megascon/Implementations/Reference_Implementation/MEGASCON-1024;;;;;;;;;;1024;128
+hash-18;hash;Megascon;MEGASCON-384;Reference_Implementation;Megascon/Implementations/Reference_Implementation/MEGASCON-384;;;;;;;;;;384;48
+hash-18;hash;Megascon;MEGASCON-384-XOF-1024;Reference_Implementation;Megascon/Implementations/Reference_Implementation/MEGASCON-384-XOF;;;;;;;;;;1024;128
+hash-18;hash;Megascon;MEGASCON-384-XOF-2048;Reference_Implementation;Megascon/Implementations/Reference_Implementation/MEGASCON-384-XOF;;;;;;;;;;2048;256
+hash-18;hash;Megascon;MEGASCON-384-XOF-256;Reference_Implementation;Megascon/Implementations/Reference_Implementation/MEGASCON-384-XOF;;;;;;;;;;256;32
+hash-18;hash;Megascon;MEGASCON-512;Reference_Implementation;Megascon/Implementations/Reference_Implementation/MEGASCON-512;;;;;;;;;;512;64
+hash-18;hash;Megascon;MEGASCON-512-XOF-1024;Reference_Implementation;Megascon/Implementations/Reference_Implementation/MEGASCON-512-XOF;;;;;;;;;;1024;128
+hash-18;hash;Megascon;MEGASCON-512-XOF-2048;Reference_Implementation;Megascon/Implementations/Reference_Implementation/MEGASCON-512-XOF;;;;;;;;;;2048;256
+hash-18;hash;Megascon;MEGASCON-512-XOF-256;Reference_Implementation;Megascon/Implementations/Reference_Implementation/MEGASCON-512-XOF;;;;;;;;;;256;32
+hash-18;hash;Megascon;MEGASCON-768;Reference_Implementation;Megascon/Implementations/Reference_Implementation/MEGASCON-768;;;;;;;;;;768;96
+hash-19;hash;MoFang;MoFang_1024;Reference_Implementation;MoFang/Implementations/Reference_Implementation/MoFang-1024;;;;;;;;;;1024;128
+hash-19;hash;MoFang;MoFang_256;Reference_Implementation;MoFang/Implementations/Reference_Implementation/MoFang-256;;;;;;;;;;256;32
+hash-19;hash;MoFang;MoFang_256_XOF;Reference_Implementation;MoFang/Implementations/Reference_Implementation/MoFang-256-XOF;;;;;;;;;;256;32
+hash-19;hash;MoFang;MoFang_512;Reference_Implementation;MoFang/Implementations/Reference_Implementation/MoFang-512;;;;;;;;;;512;64
+hash-19;hash;MoFang;MoFang_768;Reference_Implementation;MoFang/Implementations/Reference_Implementation/MoFang-768;;;;;;;;;;768;96
+hash-19;hash;MoFang;MoFang_768_XOF;Reference_Implementation;MoFang/Implementations/Reference_Implementation/MoFang-768-XOF;;;;;;;;;;768;96
+hash-20;hash;Mozi;MOZI-1024;Reference_Implementation;Mozi/Implementations/Reference_Implementation/MOZI-1024;;;;;;;;;;1024;128
+hash-20;hash;Mozi;MOZI-384;Reference_Implementation;Mozi/Implementations/Reference_Implementation/MOZI-384;;;;;;;;;;384;48
+hash-20;hash;Mozi;MOZI-384-XOF-1024;Reference_Implementation;Mozi/Implementations/Reference_Implementation/MOZI-384-XOF;;;;;;;;;;1024;128
+hash-20;hash;Mozi;MOZI-384-XOF-2048;Reference_Implementation;Mozi/Implementations/Reference_Implementation/MOZI-384-XOF;;;;;;;;;;2048;256
+hash-20;hash;Mozi;MOZI-384-XOF-256;Reference_Implementation;Mozi/Implementations/Reference_Implementation/MOZI-384-XOF;;;;;;;;;;256;32
+hash-20;hash;Mozi;MOZI-512;Reference_Implementation;Mozi/Implementations/Reference_Implementation/MOZI-512;;;;;;;;;;512;64
+hash-20;hash;Mozi;MOZI-512-XOF-1024;Reference_Implementation;Mozi/Implementations/Reference_Implementation/MOZI-512-XOF;;;;;;;;;;1024;128
+hash-20;hash;Mozi;MOZI-512-XOF-2048;Reference_Implementation;Mozi/Implementations/Reference_Implementation/MOZI-512-XOF;;;;;;;;;;2048;256
+hash-20;hash;Mozi;MOZI-512-XOF-256;Reference_Implementation;Mozi/Implementations/Reference_Implementation/MOZI-512-XOF;;;;;;;;;;256;32
+hash-20;hash;Mozi;MOZI-768;Reference_Implementation;Mozi/Implementations/Reference_Implementation/MOZI-768;;;;;;;;;;768;96
+hash-21;hash;Neulaser;Neulaser-1024;Reference_Implementation;Neulaser/Implementations and Test_Vectors/API_CryptHash/Implementations/Reference_Implementation/Neulaser-1024;;;;;;;;;;1024;128
+hash-21;hash;Neulaser;Neulaser-512;Reference_Implementation;Neulaser/Implementations and Test_Vectors/API_CryptHash/Implementations/Reference_Implementation/Neulaser-512;;;;;;;;;;512;64
+hash-21;hash;Neulaser;Neulaser-768;Reference_Implementation;Neulaser/Implementations and Test_Vectors/API_CryptHash/Implementations/Reference_Implementation/Neulaser-768;;;;;;;;;;768;96
+hash-22;hash;Pavelor;Pavelor-1024;Reference_Implementation;Pavelor/Implementations and Test_Vectors/API_CryptHash/Implementations/Reference_Implementation/Pavelor-1024;;;;;;;;;;1024;128
+hash-22;hash;Pavelor;Pavelor-512;Reference_Implementation;Pavelor/Implementations and Test_Vectors/API_CryptHash/Implementations/Reference_Implementation/Pavelor-512;;;;;;;;;;512;64
+hash-22;hash;Pavelor;Pavelor-768;Reference_Implementation;Pavelor/Implementations and Test_Vectors/API_CryptHash/Implementations/Reference_Implementation/Pavelor-768;;;;;;;;;;768;96
+hash-23;hash;QILIN;QILIN-1024;Reference_Implementation;QILIN/Implementations/Reference_Implementation/QILIN-1024;;;;;;;;;;1024;128
+hash-23;hash;QILIN;QILIN-512;Reference_Implementation;QILIN/Implementations/Reference_Implementation/QILIN-512;;;;;;;;;;512;64
+hash-23;hash;QILIN;QILIN-768;Reference_Implementation;QILIN/Implementations/Reference_Implementation/QILIN-768;;;;;;;;;;768;96
+hash-24;hash;QSH;QSH-1024;Reference_Implementation;QSH/Implementations/03_Implementations/1_Reference_Implementation/QSH-1024;;;;;;;;;;1024;128
+hash-24;hash;QSH;QSH-512;Reference_Implementation;QSH/Implementations/03_Implementations/1_Reference_Implementation/QSH-512;;;;;;;;;;512;64
+hash-24;hash;QSH;QSH-768;Reference_Implementation;QSH/Implementations/03_Implementations/1_Reference_Implementation/QSH-768;;;;;;;;;;768;96
+hash-25;hash;TaiChi;TaiChi-1024;Reference_Implementation;TaiChi/Implementations/Reference_Implementation/TaiChi-1024;;;;;;;;;;1024;128
+hash-25;hash;TaiChi;TaiChi-512;Reference_Implementation;TaiChi/Implementations/Reference_Implementation/TaiChi-512;;;;;;;;;;512;64
+hash-25;hash;TaiChi;TaiChi-768;Reference_Implementation;TaiChi/Implementations/Reference_Implementation/TaiChi-768;;;;;;;;;;768;96
+hash-26;hash;CHIME;CHIME-1024;Reference_Implementation;CHIME/Implementations/Reference_Implementation/CHIME-1024;;;;;;;;;;1024;128
+hash-26;hash;CHIME;CHIME-512;Reference_Implementation;CHIME/Implementations/Reference_Implementation/CHIME-512;;;;;;;;;;512;64
+hash-27;hash;Vedak;Vedak-1024;Reference_Implementation;Vedak/Implementations/Reference_Implementation/Vedak-1024;;;;;;;;;;1024;128
+hash-27;hash;Vedak;Vedak-512;Reference_Implementation;Vedak/Implementations/Reference_Implementation/Vedak-512;;;;;;;;;;512;64
+hash-27;hash;Vedak;Vedak-768;Reference_Implementation;Vedak/Implementations/Reference_Implementation/Vedak-768;;;;;;;;;;768;96
+hash-28;hash;XRH-1;XRH-1-1024;Reference_Implementation;XRH-1/Implementations/Reference_Implementation/XRH-1-1024;;;;;;;;;;1024;128
+hash-28;hash;XRH-1;XRH-1-512;Reference_Implementation;XRH-1/Implementations/Reference_Implementation/XRH-1-512;;;;;;;;;;512;64
+hash-28;hash;XRH-1;XRH-1-768;Reference_Implementation;XRH-1/Implementations/Reference_Implementation/XRH-1-768;;;;;;;;;;768;96
+hash-29;hash;XRH-2;XRH-2-1024;Reference_Implementation;XRH-2/Implementations/Reference_Implementation/XRH-2-1024;;;;;;;;;;1024;128
+hash-29;hash;XRH-2;XRH-2-512;Reference_Implementation;XRH-2/Implementations/Reference_Implementation/XRH-2-512;;;;;;;;;;512;64
+hash-29;hash;XRH-2;XRH-2-768;Reference_Implementation;XRH-2/Implementations/Reference_Implementation/XRH-2-768;;;;;;;;;;768;96
+hash-30;hash;ZC-DM;ZC-DM-1280-1024;Reference_Implementation;ZC-DM/Implementations/Implementations/Reference_Implementation/ZC-DM-1280-1024;;;;;;;;;;1024;128
+hash-30;hash;ZC-DM;ZC-DM-1280-512;Reference_Implementation;ZC-DM/Implementations/Implementations/Reference_Implementation/ZC-DM-1280-512;;;;;;;;;;512;64
+hash-30;hash;ZC-DM;ZC-DM-1280-768;Reference_Implementation;ZC-DM/Implementations/Implementations/Reference_Implementation/ZC-DM-1280-768;;;;;;;;;;768;96
+hash-30;hash;ZC-DM;ZC-DM-1536-1024;Reference_Implementation;ZC-DM/Implementations/Implementations/Reference_Implementation/ZC-DM-1536-1024;;;;;;;;;;1024;128
+hash-30;hash;ZC-DM;ZC-DM-1536-512;Reference_Implementation;ZC-DM/Implementations/Implementations/Reference_Implementation/ZC-DM-1536-512;;;;;;;;;;512;64
+hash-30;hash;ZC-DM;ZC-DM-1536-768;Reference_Implementation;ZC-DM/Implementations/Implementations/Reference_Implementation/ZC-DM-1536-768;;;;;;;;;;768;96
+hash-31;hash;ZC-DMC;ZC-DMC-1280-1024;Reference_Implementation;ZC-DMC/Implementations/Implementations/Reference_Implementation/ZC-DMC-1280-1024;;;;;;;;;;1024;128
+hash-31;hash;ZC-DMC;ZC-DMC-1280-512;Reference_Implementation;ZC-DMC/Implementations/Implementations/Reference_Implementation/ZC-DMC-1280-512;;;;;;;;;;512;64
+hash-31;hash;ZC-DMC;ZC-DMC-1280-768;Reference_Implementation;ZC-DMC/Implementations/Implementations/Reference_Implementation/ZC-DMC-1280-768;;;;;;;;;;768;96
+hash-31;hash;ZC-DMC;ZC-DMC-1536-1024;Reference_Implementation;ZC-DMC/Implementations/Implementations/Reference_Implementation/ZC-DMC-1536-1024;;;;;;;;;;1024;128
+hash-31;hash;ZC-DMC;ZC-DMC-1536-512;Reference_Implementation;ZC-DMC/Implementations/Implementations/Reference_Implementation/ZC-DMC-1536-512;;;;;;;;;;512;64
+hash-31;hash;ZC-DMC;ZC-DMC-1536-768;Reference_Implementation;ZC-DMC/Implementations/Implementations/Reference_Implementation/ZC-DMC-1536-768;;;;;;;;;;768;96
+hash-32;hash;ZC-EDMC;ZC-EDMC-1280-1024;Reference_Implementation;ZC-EDMC/Implementations/Implementations/Reference_Implementation/ZC-EDMC-1280-1024;;;;;;;;;;1024;128
+hash-32;hash;ZC-EDMC;ZC-EDMC-1280-512;Reference_Implementation;ZC-EDMC/Implementations/Implementations/Reference_Implementation/ZC-EDMC-1280-512;;;;;;;;;;512;64
+hash-32;hash;ZC-EDMC;ZC-EDMC-1280-768;Reference_Implementation;ZC-EDMC/Implementations/Implementations/Reference_Implementation/ZC-EDMC-1280-768;;;;;;;;;;768;96
+hash-32;hash;ZC-EDMC;ZC-EDMC-1536-1024;Reference_Implementation;ZC-EDMC/Implementations/Implementations/Reference_Implementation/ZC-EDMC-1536-1024;;;;;;;;;;1024;128
+hash-32;hash;ZC-EDMC;ZC-EDMC-1536-512;Reference_Implementation;ZC-EDMC/Implementations/Implementations/Reference_Implementation/ZC-EDMC-1536-512;;;;;;;;;;512;64
+hash-32;hash;ZC-EDMC;ZC-EDMC-1536-768;Reference_Implementation;ZC-EDMC/Implementations/Implementations/Reference_Implementation/ZC-EDMC-1536-768;;;;;;;;;;768;96
+hash-33;hash;Thunder;Thunder-1024;Reference_Implementation;Thunder/Implementations and Test_vector/Thunder-X86/Implementations/Reference_Implementation/Thunder-1024;;;;;;;;;;1024;128
+hash-33;hash;Thunder;Thunder-512;Reference_Implementation;Thunder/Implementations and Test_vector/Thunder-X86/Implementations/Reference_Implementation/Thunder-512;;;;;;;;;;512;64
+hash-33;hash;Thunder;Thunder-768;Reference_Implementation;Thunder/Implementations and Test_vector/Thunder-X86/Implementations/Reference_Implementation/Thunder-768;;;;;;;;;;768;96
+hash-33;hash;Thunder;Thunder-XOF-256;Reference_Implementation;Thunder/Implementations and Test_vector/Thunder-X86/Implementations/Reference_Implementation/Thunder-XOF-256;;;;;;;;;;1280;160
+hash-33;hash;Thunder;Thunder-XOF-384;Reference_Implementation;Thunder/Implementations and Test_vector/Thunder-X86/Implementations/Reference_Implementation/Thunder-XOF-384;;;;;;;;;;1152;144
+hash-33;hash;Thunder;Thunder-XOF-512;Reference_Implementation;Thunder/Implementations and Test_vector/Thunder-X86/Implementations/Reference_Implementation/Thunder-XOF-512;;;;;;;;;;1024;128
+hash-34;hash;WChain;WChain-V1-512;Reference_Implementation;WChain/Implementations and Test_Vectors/Implementations/Reference_Implementation/WChain-V1-512;;;;;;;;;;512;64
+hash-34;hash;WChain;WChain-V2-1024;Reference_Implementation;WChain/Implementations and Test_Vectors/Implementations/Reference_Implementation/WChain-V2-1024;;;;;;;;;;1024;128
+hash-35;hash;Wish;Wish1024;Reference_Implementation;Wish/Implementations/Reference_Implementation/Wish1024_reference;;;;;;;;;;1024;128
+hash-35;hash;Wish;Wish512;Reference_Implementation;Wish/Implementations/Reference_Implementation/Wish512_reference;;;;;;;;;;512;64
+kem-01;kem;Aigis-Enc+;Aigis-enc1;Reference_Implementation;Implementations/Reference_Implementation/Aigis-Enc+-I;656;1456;896;16;;;;;;;
+kem-01;kem;Aigis-Enc+;Aigis-enc2;Reference_Implementation;Implementations/Reference_Implementation/Aigis-Enc+-II;1312;2912;1664;32;;;;;;;
+kem-01;kem;Aigis-Enc+;Aigis-enc3;Reference_Implementation;Implementations/Reference_Implementation/Aigis-Enc+-III;2624;5824;3584;64;;;;;;;
+kem-02;kem;Amoeba;Amoeba128;Reference_Implementation;Implementations/Reference_Implementation/Amoeba-576/src;784;1712;1047;64;;;;;;;
+kem-02;kem;Amoeba;Amoeba192;Reference_Implementation;Implementations/Reference_Implementation/Amoeba-864/src;1144;2504;1581;64;;;;;;;
+kem-02;kem;Amoeba;Amoeba256;Reference_Implementation;Implementations/Reference_Implementation/Amoeba-1152/src;1648;3440;1833;64;;;;;;;
+kem-02;kem;Amoeba;Amoeba384;Reference_Implementation;Implementations/Reference_Implementation/Amoeba-1728/src;2440;5096;2769;64;;;;;;;
+kem-02;kem;Amoeba;Amoeba512;Reference_Implementation;Implementations/Reference_Implementation/Amoeba-2304/src;3520;7040;3914;64;;;;;;;
+kem-03;kem;BAG-Loong;BAG-Loong-128;Reference_Implementation;Implementations/Reference_Implementation/Loong-Block-ms-128;2500;5064;3071;16;;;;;;;
+kem-03;kem;BAG-Loong;BAG-Loong-256;Reference_Implementation;Implementations/Reference_Implementation/Loong-Block-ms-256;6597;13258;8400;32;;;;;;;
+kem-03;kem;BAG-Loong;BAG-Loong-384;Reference_Implementation;Implementations/Reference_Implementation/Loong-Block-ms-384;12152;24368;15112;48;;;;;;;
+kem-03;kem;BAG-Loong;BAG-Loong-512;Reference_Implementation;Implementations/Reference_Implementation/Loong-Block-ms-512;19043;38150;21660;64;;;;;;;
+kem-04;kem;BAG-Piglet;bag_piglet_128;Reference_Implementation;Implementations/Reference_Implementation/bag_piglet128;522;16;1027;16;;;;;;;
+kem-04;kem;BAG-Piglet;bag_piglet_256;Reference_Implementation;Implementations/Reference_Implementation/bag_piglet256;1573;32;3097;32;;;;;;;
+kem-04;kem;BAG-Piglet;bag_piglet_384;Reference_Implementation;Implementations/Reference_Implementation/bag_piglet384;2778;48;5475;48;;;;;;;
+kem-04;kem;BAG-Piglet;bag_piglet_512;Reference_Implementation;Implementations/Reference_Implementation/bag_piglet512;4158;64;8204;64;;;;;;;
+kem-05;kem;BIKE-MLThre;BIKE_v2_128;Reference_Implementation;Implementations/reference;1541;3114;1573;32;;;;;;;
+kem-05;kem;BIKE-MLThre;BIKE_v2_256;Reference_Implementation;Implementations/reference;5122;10276;5154;32;;;;;;;
+kem-05;kem;BIKE-MLThre;BIKE_v2_512;Reference_Implementation;Implementations/reference;18751;37566;18815;64;;;;;;;
+kem-06;kem;BRA;BRA-128;Reference_Implementation;Implementations/Reference_Implementation/BRA-128;1078;1176;2092;64;;;;;;;
+kem-06;kem;BRA;BRA-256;Reference_Implementation;Implementations/Reference_Implementation/BRA-256;1735;1841;3406;64;;;;;;;
+kem-06;kem;BRA;BRA-512;Reference_Implementation;Implementations/Reference_Implementation/BRA-512;3573;3717;7082;64;;;;;;;
+kem-07;kem;BRQC;BRQC-128;Reference_Implementation;Implementations/Reference_Implementation/BRQC-128;1954;2066;3844;64;;;;;;;
+kem-07;kem;BRQC;BRQC-256;Reference_Implementation;Implementations/Reference_Implementation/BRQC-256;3345;3471;6626;64;;;;;;;
+kem-07;kem;BRQC;BRQC-512;Reference_Implementation;Implementations/Reference_Implementation/BRQC-512;6562;6712;13060;64;;;;;;;
+kem-08;kem;BW-KEM;BW_KEM_C128;Reference_Implementation;Implementations/Reference_Implementation/BW_KEM_C128;784;1585;768;16;;;;;;;
+kem-08;kem;BW-KEM;BW_KEM_C256;Reference_Implementation;Implementations/Reference_Implementation/BW_KEM_C256;1568;3169;1440;32;;;;;;;
+kem-08;kem;BW-KEM;BW_KEM_C512;Reference_Implementation;Implementations/Reference_Implementation/BW_KEM_C512;3136;6337;2944;64;;;;;;;
+kem-09;kem;CheetahKEM;Cheetah128;Reference_Implementation;Implementations/Reference_Implementation/Cheetah128;832;1936;864;16;;;;;;;
+kem-09;kem;CheetahKEM;Cheetah256;Reference_Implementation;Implementations/Reference_Implementation/Cheetah256;1648;3808;1728;32;;;;;;;
+kem-09;kem;CheetahKEM;Cheetah384;Reference_Implementation;Implementations/Reference_Implementation/Cheetah384;2704;5920;2832;48;;;;;;;
+kem-09;kem;CheetahKEM;Cheetah512;Reference_Implementation;Implementations/Reference_Implementation/Cheetah512;3600;7872;4032;64;;;;;;;
+kem-10;kem;C-Multi-UR-AG;CMultiURAG-128;Reference_Implementation;Implementations/Reference_Implementation/CMultiURAG-128;3866;3960;7332;64;;;;;;;
+kem-10;kem;C-Multi-UR-AG;CMultiURAG-256;Reference_Implementation;Implementations/Reference_Implementation/CMultiURAG-256;10780;10892;15304;64;;;;;;;
+kem-10;kem;C-Multi-UR-AG;CMultiURAG-512;Reference_Implementation;Implementations/Reference_Implementation/CMultiURAG-512;28866;29021;40926;64;;;;;;;
+kem-11;kem;COMPASS-KEM;COMPASS-KEM-128;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/COMPASS-KEM-128;672;1504;768;32;;;;;;;
+kem-11;kem;COMPASS-KEM;COMPASS-KEM-256;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/COMPASS-KEM-256;1312;2912;1472;32;;;;;;;
+kem-11;kem;COMPASS-KEM;COMPASS-KEM-384;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/COMPASS-KEM-384;2144;4704;2432;32;;;;;;;
+kem-11;kem;COMPASS-KEM;COMPASS-KEM-512;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/COMPASS-KEM-512;2848;6240;3264;32;;;;;;;
+kem-12;kem;CTL;CTL-257-512;Reference_Implementation;Implementations and Test_Vectors/KEM-CTL-x86-Reference_Implementation/crypto_kem/Implementations/CTL-257-512;521;2953;473;16;;;;;;;
+kem-12;kem;CTL;CTL-3329-2048;Reference_Implementation;Implementations and Test_Vectors/KEM-CTL-x86-Reference_Implementation/crypto_kem/Implementations/CTL-3329-2048;3009;15617;2353;48;;;;;;;
+kem-12;kem;CTL;CTL-769-1024;Reference_Implementation;Implementations and Test_Vectors/KEM-CTL-x86-Reference_Implementation/crypto_kem/Implementations/CTL-769-1024;1230;6030;1006;32;;;;;;;
+kem-13;kem;DKEM;DKEM-128;Reference_Implementation;Implementations/Reference_Implementation/DKEM-128;800;1600;800;32;;;;;;;
+kem-13;kem;DKEM;DKEM-256;Reference_Implementation;Implementations/Reference_Implementation/DKEM-256;1568;3136;1600;32;;;;;;;
+kem-13;kem;DKEM;DKEM-512;Reference_Implementation;Implementations/Reference_Implementation/DKEM-512;3392;6784;3136;64;;;;;;;
+kem-14;kem;DTRU;DTRU-1024;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/DTRU-1024;1536;2080;1280;32;;;;;;;
+kem-14;kem;DTRU;DTRU-1024-PACK_PK;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/DTRU-1024;1506;2050;1280;32;;;;;;;
+kem-14;kem;DTRU;DTRU-1536;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/DTRU-1536;2304;3136;1920;64;;;;;;;
+kem-14;kem;DTRU;DTRU-1536-PACK_PK;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/DTRU-1536;2259;3091;1920;64;;;;;;;
+kem-14;kem;DTRU;DTRU-2048;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/DTRU-2048;3072;3904;2560;64;;;;;;;
+kem-14;kem;DTRU;DTRU-2048-PACK_PK;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/DTRU-2048;3012;3844;2560;64;;;;;;;
+kem-14;kem;DTRU;DTRU-648;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/DTRU-648;972;1328;729;32;;;;;;;
+kem-14;kem;DTRU;DTRU-648-PACK_PK;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/DTRU-648;954;1310;729;32;;;;;;;
+kem-14;kem;DTRU;DTRU-768;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/DTRU-768;1152;1568;960;32;;;;;;;
+kem-14;kem;DTRU;DTRU-768-PACK_PK;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/DTRU-768;1130;1546;960;32;;;;;;;
+kem-14;kem;DTRU;DTRU-Light;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/DTRU-Light;640;864;512;32;;;;;;;
+kem-14;kem;DTRU;DTRU-Prime;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/DTRU-Prime;1495;1935;1359;32;;;;;;;
+kem-15;kem;FLIT;FLIT128_REF;Reference_Implementation;Implementations/Reference_Implementation/FLIT128;615;1351;512;32;;;;;;;
+kem-15;kem;FLIT;FLIT256_REF;Reference_Implementation;Implementations/Reference_Implementation/FLIT256;1229;2605;1024;32;;;;;;;
+kem-15;kem;FLIT;FLIT512_REF;Reference_Implementation;Implementations/Reference_Implementation/FLIT512;3072;6336;2304;64;;;;;;;
+kem-16;kem;HARE;HARE-128-kr;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/HARE-128/kr;2629;2677;4688;16;;;;;;;
+kem-16;kem;HARE;HARE-256-kr;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/HARE-256/kr;6580;6676;11790;32;;;;;;;
+kem-16;kem;HARE;HARE-384-kr;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/HARE-384/kr;13157;13301;23693;48;;;;;;;
+kem-16;kem;HARE;HARE-512-kr;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/HARE-512/kr;21812;22004;39294;64;;;;;;;
+kem-17;kem;HEP-QC;hep-qc-1;Reference_Implementation;Implementations/Implementations/ref/hep-qc-1;285889;285969;4433;32;;;;;;;
+kem-17;kem;HEP-QC;hep-qc-3;Reference_Implementation;Implementations/Implementations/ref/hep-qc-3;866210;866298;8978;32;;;;;;;
+kem-17;kem;HEP-QC;hep-qc-5;Reference_Implementation;Implementations/Implementations/ref/hep-qc-5;1852485;1852581;14421;32;;;;;;;
+kem-17;kem;HEP-QC;hep-qc-7;Reference_Implementation;Implementations/Implementations/ref/hep-qc-7;12644449;12644577;49297;32;;;;;;;
+kem-18;kem;LoongKEM;Loong128;Reference_Implementation;Implementations/Reference_Implementation/Loong128;1472;1848;1512;16;;;;;;;
+kem-18;kem;LoongKEM;Loong256;Reference_Implementation;Implementations/Reference_Implementation/Loong256;3248;3888;3520;32;;;;;;;
+kem-18;kem;LoongKEM;Loong384;Reference_Implementation;Implementations/Reference_Implementation/Loong384;6444;7340;6680;48;;;;;;;
+kem-18;kem;LoongKEM;Loong512;Reference_Implementation;Implementations/Reference_Implementation/Loong512;10640;11832;10848;64;;;;;;;
+kem-19;kem;Lore;Lore-L1;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Lore-SHAKE/Lore-L1;610;2108;706;32;;;;;;;
+kem-19;kem;Lore;Lore-L1;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Lore-SM3/Lore-L1;610;2108;706;32;;;;;;;
+kem-19;kem;Lore;Lore-L2;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Lore-SHAKE/Lore-L2;1186;4518;1282;32;;;;;;;
+kem-19;kem;Lore;Lore-L2;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Lore-SM3/Lore-L2;1186;4518;1282;32;;;;;;;
+kem-19;kem;Lore;Lore-L3;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Lore-SHAKE/Lore-L3;1954;7736;2114;32;;;;;;;
+kem-19;kem;Lore;Lore-L3;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Lore-SM3/Lore-L3;1954;7736;2114;32;;;;;;;
+kem-19;kem;Lore;Lore-L4;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Lore-SHAKE/Lore-L4;2914;11432;3170;32;;;;;;;
+kem-19;kem;Lore;Lore-L4;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Lore-SM3/Lore-L4;2914;11432;3170;32;;;;;;;
+kem-20;kem;MAMBA-Frost;MAMBA-Frost-128;Reference_Implementation;Implementations/Reference_Implementation/MAMBA-Frost-128;5152;6736;5192;16;;;;;;;
+kem-20;kem;MAMBA-Frost;MAMBA-Frost-192;Reference_Implementation;Implementations/Reference_Implementation/MAMBA-Frost-192;9712;11528;9760;24;;;;;;;
+kem-20;kem;MAMBA-Frost;MAMBA-Frost-256;Reference_Implementation;Implementations/Reference_Implementation/MAMBA-Frost-256;16776;19416;15552;32;;;;;;;
+kem-20;kem;MAMBA-Frost;MAMBA-Frost-384;Reference_Implementation;Implementations/Reference_Implementation/MAMBA-Frost-384;25096;29032;37736;48;;;;;;;
+kem-20;kem;MAMBA-Frost;MAMBA-Frost-512;Reference_Implementation;Implementations/Reference_Implementation/MAMBA-Frost-512;36432;41728;72944;64;;;;;;;
+kem-20;kem;MAMBA-Frost;MAMBA-Frost-CC-128;Reference_Implementation;Implementations/Reference_Implementation/MAMBA-Frost-CC-128;5152;6736;5192;16;;;;;;;
+kem-20;kem;MAMBA-Frost;MAMBA-Frost-CC-192;Reference_Implementation;Implementations/Reference_Implementation/MAMBA-Frost-CC-192;9712;11528;9760;24;;;;;;;
+kem-20;kem;MAMBA-Frost;MAMBA-Frost-CC-256;Reference_Implementation;Implementations/Reference_Implementation/MAMBA-Frost-CC-256;16776;19416;15552;32;;;;;;;
+kem-20;kem;MAMBA-Frost;MAMBA-Frost-CC-384;Reference_Implementation;Implementations/Reference_Implementation/MAMBA-Frost-CC-384;37628;43492;25204;48;;;;;;;
+kem-20;kem;MAMBA-Frost;MAMBA-Frost-CC-512;Reference_Implementation;Implementations/Reference_Implementation/MAMBA-Frost-CC-512;72832;83328;36544;64;;;;;;;
+kem-21;kem;MAMBA-Viper;MAMBA-Viper-128;Reference_Implementation;Implementations/Reference_Implementation/MAMBA-Viper-128;608;1424;736;16;;;;;;;
+kem-21;kem;MAMBA-Viper;MAMBA-Viper-192;Reference_Implementation;Implementations/Reference_Implementation/MAMBA-Viper-192;992;2200;1088;24;;;;;;;
+kem-21;kem;MAMBA-Viper;MAMBA-Viper-256;Reference_Implementation;Implementations/Reference_Implementation/MAMBA-Viper-256;1312;2912;1472;32;;;;;;;
+kem-21;kem;MAMBA-Viper;MAMBA-Viper-384;Reference_Implementation;Implementations/Reference_Implementation/MAMBA-Viper-384;2496;5488;2656;48;;;;;;;
+kem-21;kem;MAMBA-Viper;MAMBA-Viper-512;Reference_Implementation;Implementations/Reference_Implementation/MAMBA-Viper-512;3200;7040;3456;64;;;;;;;
+kem-22;kem;Mithril;Mithril-128;Reference_Implementation;Implementations/Reference_Implementation/Mithril-128;944;1136;928;16;;;;;;;
+kem-22;kem;Mithril;Mithril-256;Reference_Implementation;Implementations/Reference_Implementation/Mithril-256;1648;2000;1680;32;;;;;;;
+kem-22;kem;Mithril;Mithril-512;Reference_Implementation;Implementations/Reference_Implementation/Mithril-512;3056;3728;3504;64;;;;;;;
+kem-23;kem;Mito;MITO_1_128;Reference_Implementation;Implementations/Reference_Implementation/Mito-1-128;3908;4052;5796;64;;;;;;;
+kem-23;kem;Mito;MITO_1_256;Reference_Implementation;Implementations/Reference_Implementation/Mito-1-256;8522;8682;12714;64;;;;;;;
+kem-23;kem;Mito;MITO_1_512;Reference_Implementation;Implementations/Reference_Implementation/Mito-1-512;26630;26822;39878;64;;;;;;;
+kem-23;kem;Mito;MITO_1_E_128;Reference_Implementation;Implementations/Reference_Implementation/Mito-1-E-128;3720;3864;5512;64;;;;;;;
+kem-23;kem;Mito;MITO_1_E_256;Reference_Implementation;Implementations/Reference_Implementation/Mito-1-E-256;8130;8290;12130;64;;;;;;;
+kem-23;kem;Mito;MITO_1_E_512;Reference_Implementation;Implementations/Reference_Implementation/Mito-1-E-512;25674;25866;38442;64;;;;;;;
+kem-23;kem;Mito;MITO_2_E_128;Reference_Implementation;Implementations/Reference_Implementation/Mito-2-E-128;5192;5336;6440;64;;;;;;;
+kem-23;kem;Mito;MITO_2_E_256;Reference_Implementation;Implementations/Reference_Implementation/Mito-2-E-256;10828;10988;13484;64;;;;;;;
+kem-23;kem;Mito;MITO_2_E_512;Reference_Implementation;Implementations/Reference_Implementation/Mito-2-E-512;32712;32904;40840;64;;;;;;;
+kem-24;kem;MORNING-Scabbard;scabbard128;Reference_Implementation;Implementations/Reference_Implementation/scabbard128;736;1056;760;16;;;;;;;
+kem-24;kem;MORNING-Scabbard;scabbard256;Reference_Implementation;Implementations/Reference_Implementation/scabbard256;1616;2256;1648;32;;;;;;;
+kem-24;kem;MORNING-Scabbard;scabbard512;Reference_Implementation;Implementations/Reference_Implementation/scabbard512;2880;4032;3072;64;;;;;;;
+kem-25;kem;NEV;NEV_1024_1409_ICCS;Reference_Implementation;Implementations/Reference_Implementation/NEV-R2;1344;2720;1344;32;;;;;;;
+kem-25;kem;NEV;NEV_1024_3329_ICCS;Reference_Implementation;Implementations/Reference_Implementation/NEV-D2;1536;3104;1536;32;;;;;;;
+kem-25;kem;NEV;NEV_1024_769_C_ICCS;Reference_Implementation;Implementations/Reference_Implementation/NEV-C2-c;1229;2490;1024;32;;;;;;;
+kem-25;kem;NEV;NEV_1024_769_ICCS;Reference_Implementation;Implementations/Reference_Implementation/NEV-C2;1229;2490;1229;32;;;;;;;
+kem-25;kem;NEV;NEV_2048_1409_ICCS;Reference_Implementation;Implementations/Reference_Implementation/NEV-R3;2688;5440;2688;64;;;;;;;
+kem-25;kem;NEV;NEV_2048_3329_ICCS;Reference_Implementation;Implementations/Reference_Implementation/NEV-D3;3072;6208;3072;64;;;;;;;
+kem-25;kem;NEV;NEV_2048_769_C_ICCS;Reference_Implementation;Implementations/Reference_Implementation/NEV-C3-c;2458;4980;2048;64;;;;;;;
+kem-25;kem;NEV;NEV_2048_769_ICCS;Reference_Implementation;Implementations/Reference_Implementation/NEV-C3;2458;4980;2458;64;;;;;;;
+kem-25;kem;NEV;NEV_512_1409_ICCS;Reference_Implementation;Implementations/Reference_Implementation/NEV-R1;672;1360;672;16;;;;;;;
+kem-25;kem;NEV;NEV_512_3329_ICCS;Reference_Implementation;Implementations/Reference_Implementation/NEV-D1;768;1552;768;16;;;;;;;
+kem-25;kem;NEV;NEV_512_769_C_ICCS;Reference_Implementation;Implementations/Reference_Implementation/NEV-C1-c;615;1246;512;16;;;;;;;
+kem-25;kem;NEV;NEV_512_769_ICCS;Reference_Implementation;Implementations/Reference_Implementation/NEV-C1;615;1246;615;16;;;;;;;
+kem-26;kem;NSS-HQC;HQC-128;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/HQC-128;3713;3777;5185;32;;;;;;;
+kem-26;kem;NSS-HQC;HQC-256;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/HQC-256;6844;6908;9084;32;;;;;;;
+kem-26;kem;NSS-HQC;HQC-384;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/HQC-384;15371;15467;18571;48;;;;;;;
+kem-26;kem;NSS-HQC;HQC-512;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/HQC-512;27302;27430;31462;64;;;;;;;
+kem-27;kem;NTRE;NTRE-128;Reference_Implementation;Implementations/Reference_Implementation/NTRE-128;972;1976;972;64;;;;;;;
+kem-27;kem;NTRE;NTRE-256;Reference_Implementation;Implementations/Reference_Implementation/NTRE-256;1944;3920;1944;64;;;;;;;
+kem-27;kem;NTRE;NTRE-512;Reference_Implementation;Implementations/Reference_Implementation/NTRE-512;3456;6944;3456;64;;;;;;;
+kem-28;kem;OAEP-NTRU;OAEP-NTRU-1296;Reference_Implementation;Implementations/Reference_Implementation/OAEP-NTRU-1296;2430;4924;2494;32;;;;;;;
+kem-28;kem;OAEP-NTRU;OAEP-NTRU-2592;Reference_Implementation;Implementations/Reference_Implementation/OAEP-NTRU-2592;4860;9848;4988;64;;;;;;;
+kem-28;kem;OAEP-NTRU;OAEP-NTRU-648;Reference_Implementation;Implementations/Reference_Implementation/OAEP-NTRU-648;1053;2138;1085;32;;;;;;;
+kem-29;kem;Polar-KEM;PolarKEM-128;Reference_Implementation;Submission_Package/Implementations/Reference_Implementation/PolarKEM-128;1024;2048;768;16;;;;;;;
+kem-29;kem;Polar-KEM;PolarKEM-256;Reference_Implementation;Submission_Package/Implementations/Reference_Implementation/PolarKEM-256;2048;4096;1280;32;;;;;;;
+kem-29;kem;Polar-KEM;PolarKEM-512;Reference_Implementation;Submission_Package/Implementations/Reference_Implementation/PolarKEM-512;4096;8192;2304;64;;;;;;;
+kem-30;kem;PolarLAC;POLARLAC-128;Reference_Implementation;Implementations/Reference_Implementation/x86/POLARLAC-128;530;1570;640;16;;;;;;;
+kem-30;kem;PolarLAC;POLARLAC-256;Reference_Implementation;Implementations/Reference_Implementation/x86/POLARLAC-256;1060;3140;1280;32;;;;;;;
+kem-30;kem;PolarLAC;POLARLAC-512;Reference_Implementation;Implementations/Reference_Implementation/x86/POLARLAC-512;2116;6276;2560;64;;;;;;;
+kem-30;kem;PolarLAC;POLARLAC-512-Star;Reference_Implementation;Implementations/Reference_Implementation/x86/POLARLAC-512-Star;2522;6682;2970;64;;;;;;;
+kem-30;kem;PolarLAC;POLARLAC-Light;Reference_Implementation;Implementations/Reference_Implementation/x86/POLARLAC-Light;530;1570;608;16;;;;;;;
+kem-31;kem;QIMEN-PIKE;NGCC-1;Reference_Implementation;Implementations/Implementations;389;472;602;32;;;;;;;
+kem-31;kem;QIMEN-PIKE;NGCC-2;Reference_Implementation;Implementations/Implementations;592;734;882;32;;;;;;;
+kem-31;kem;QIMEN-PIKE;NGCC-3;Reference_Implementation;Implementations/Implementations;1198;1497;1746;64;;;;;;;
+kem-32;kem;QCTM;QCTM128;Reference_Implementation;Implementations/Reference_Implementation/QCTM128;167987;192545;640;32;;;;;;;
+kem-32;kem;QCTM;QCTM256;Reference_Implementation;Implementations/Reference_Implementation/QCTM256;595662;641942;1153;32;;;;;;;
+kem-32;kem;QCTM;QCTM512;Reference_Implementation;Implementations/Reference_Implementation/QCTM512;2374727;2467243;2264;64;;;;;;;
+kem-33;kem;QUBE;qube_128;Reference_Implementation;Implementations/Reference_Implementation/qube-128;3294;3326;3287;16;;;;;;;
+kem-33;kem;QUBE;qube_192;Reference_Implementation;Implementations/Reference_Implementation/qube-192;6364;6412;6362;24;;;;;;;
+kem-33;kem;QUBE;qube_256;Reference_Implementation;Implementations/Reference_Implementation/qube-256;10446;10510;10423;32;;;;;;;
+kem-33;kem;QUBE;qube_384;Reference_Implementation;Implementations/Reference_Implementation/qube-384;20738;20834;20633;48;;;;;;;
+kem-33;kem;QUBE;qube_512;Reference_Implementation;Implementations/Reference_Implementation/qube-512;34028;34156;33846;64;;;;;;;
+kem-34;kem;Rudraksh2;lwekem128;Reference_Implementation;Implementations/Reference_Implementation/lwekem128;880;1776;912;16;;;;;;;
+kem-34;kem;Rudraksh2;lwekem256;Reference_Implementation;Implementations/Reference_Implementation/lwekem256;1760;3552;1728;32;;;;;;;
+kem-34;kem;Rudraksh2;lwekem512;Reference_Implementation;Implementations/Reference_Implementation/lwekem512;3392;6848;3552;64;;;;;;;
+kem-35;kem;Scloud+;Scloudplus-128-AES-packed10;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Scloudplus-128/kem;6096;7440;6160;16;;;;;;;
+kem-35;kem;Scloud+;Scloudplus-128-SHAKE-packed10;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Scloudplus-128/kem;6096;7440;6160;16;;;;;;;
+kem-35;kem;Scloud+;Scloudplus-128-SM3-packed10;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Scloudplus-128/kem;6096;7440;6160;16;;;;;;;
+kem-35;kem;Scloud+;Scloudplus-192-AES-packed10;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Scloudplus-192/kem;11456;13872;12645;24;;;;;;;
+kem-35;kem;Scloud+;Scloudplus-192-SHAKE-packed10;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Scloudplus-192/kem;11456;13872;12645;24;;;;;;;
+kem-35;kem;Scloud+;Scloudplus-192-SM3-packed10;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Scloudplus-192/kem;11456;13872;12645;24;;;;;;;
+kem-35;kem;Scloud+;Scloudplus-256-AES-packed10;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Scloudplus-256/kem;16296;19680;17925;32;;;;;;;
+kem-35;kem;Scloud+;Scloudplus-256-SHAKE-packed10;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Scloudplus-256/kem;16296;19680;17925;32;;;;;;;
+kem-35;kem;Scloud+;Scloudplus-256-SM3-packed10;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Scloudplus-256/kem;16296;19680;17925;32;;;;;;;
+kem-35;kem;Scloud+;Scloudplus-384-AES-packed10;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Scloudplus-384/kem;33296;40144;33600;48;;;;;;;
+kem-35;kem;Scloud+;Scloudplus-384-SHAKE-packed10;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Scloudplus-384/kem;33296;40144;33600;48;;;;;;;
+kem-35;kem;Scloud+;Scloudplus-384-SM3-packed10;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Scloudplus-384/kem;33296;40144;33600;48;;;;;;;
+kem-35;kem;Scloud+;Scloudplus-512-AES-packed10;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Scloudplus-512/kem;48016;57872;48320;64;;;;;;;
+kem-35;kem;Scloud+;Scloudplus-512-SHAKE-packed10;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Scloudplus-512/kem;48016;57872;48320;64;;;;;;;
+kem-35;kem;Scloud+;Scloudplus-512-SM3-packed10;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Scloudplus-512/kem;48016;57872;48320;64;;;;;;;
+kem-36;kem;TRIKE;TRIKE-2;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/TRIKE-2;1980;6328;3928;32;;;;;;;
+kem-36;kem;TRIKE;TRIKE-5;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/TRIKE-5;4453;13988;8874;32;;;;;;;
+kem-36;kem;TRIKE;TRIKE-7;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/TRIKE-7;8776;27260;17488;64;;;;;;;
+kem-36;kem;TRIKE;TRIKE-9;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/TRIKE-9;14320;44228;28576;64;;;;;;;
+kem-37;kem;TriQ-KEM;TriQ-KEM-128;Reference_Implementation;Implementations/Reference_Implementation/TriQ-KEM-128;2054;2102;4086;16;;;;;;;
+kem-37;kem;TriQ-KEM;TriQ-KEM-256;Reference_Implementation;Implementations/Reference_Implementation/TriQ-KEM-256;6328;6424;12472;32;;;;;;;
+kem-37;kem;TriQ-KEM;TriQ-KEM-384;Reference_Implementation;Implementations/Reference_Implementation/TriQ-KEM-384;12255;12399;24335;48;;;;;;;
+kem-37;kem;TriQ-KEM;TriQ-KEM-512;Reference_Implementation;Implementations/Reference_Implementation/TriQ-KEM-512;19768;19960;39320;64;;;;;;;
+kem-38;kem;UVW-KEM;UVW_KEM_128;Reference_Implementation;Implementations/Reference_Implementation/UVW-KEM-128;208013;35;1032;64;;;;;;;
+kem-38;kem;UVW-KEM;UVW_KEM_256;Reference_Implementation;Implementations/Reference_Implementation/UVW-KEM-256;911645;35;2199;64;;;;;;;
+kem-38;kem;UVW-KEM;UVW_KEM_512;Reference_Implementation;Implementations/Reference_Implementation/UVW-KEM-512;4001850;67;4820;64;;;;;;;
+kem-39;kem;Weaver;WeaverKEM-128;Reference_Implementation;Implementations/Reference_Implementation/WeaverKEM-128;752;1776;816;16;;;;;;;
+kem-39;kem;Weaver;WeaverKEM-256;Reference_Implementation;Implementations/Reference_Implementation/WeaverKEM-256;1312;3072;1536;32;;;;;;;
+kem-39;kem;Weaver;WeaverKEM-512;Reference_Implementation;Implementations/Reference_Implementation/WeaverKEM-512;2880;6400;3392;64;;;;;;;
+kem-40;kem;YuanYang.KEM;YuanYang-KEM;Reference_Implementation;Implementations/Reference_Implementation/yuanyang-1024;1568;3168;1344;32;;;;;;;
+kem-40;kem;YuanYang.KEM;YuanYang-KEM;Reference_Implementation;Implementations/Reference_Implementation/yuanyang-2048;3328;6528;2880;64;;;;;;;
+kem-40;kem;YuanYang.KEM;YuanYang-KEM;Reference_Implementation;Implementations/Reference_Implementation/yuanyang-512;736;1536;656;16;;;;;;;
+kem-41;kem;ZEN;ZEN_128;Reference_Implementation;Implementations/Reference_Implementation/ZEN_128;615;1303;512;16;;;;;;;
+kem-41;kem;ZEN;ZEN_256;Reference_Implementation;Implementations/Reference_Implementation/ZEN_256;1229;2605;1024;32;;;;;;;
+kem-41;kem;ZEN;ZEN_512;Reference_Implementation;Implementations/Reference_Implementation/ZEN_512;2458;5210;2048;64;;;;;;;
+kex-01;kex;ADKEX;ADKEX-128;Reference_Implementation;Implementations/Reference_Implementation/ADKEX-128;800;1600;;32;;2;3232;96;2400;;
+kex-01;kex;ADKEX;ADKEX-256;Reference_Implementation;Implementations/Reference_Implementation/ADKEX-256;1568;3136;;32;;2;6336;96;4768;;
+kex-01;kex;ADKEX;ADKEX-512;Reference_Implementation;Implementations/Reference_Implementation/ADKEX-512;3392;6784;;64;;2;13376;192;9664;;
+kex-02;kex;AFS-KEX;AFS_KEX_C128;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/AFS_KEX_C128;1568;3170;;16;;4;64;64;1568;;
+kex-02;kex;AFS-KEX;AFS_KEX_C256;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/AFS_KEX_C256;3136;6338;;32;;4;128;128;2944;;
+kex-02;kex;AFS-KEX;AFS_KEX_C512;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/AFS_KEX_C512;6272;12674;;64;;4;256;256;6016;;
+kex-03;kex;CreTAKE;CreTAKE-K2K-PLAC128;Reference_Implementation;Implementations/Reference_Implementation/CreTAKE128/CreTAKE-K2K-PLAC128;530;1570;;32;;2;720;32;2450;;
+kex-03;kex;CreTAKE;CreTAKE-K2K-PLAC256;Reference_Implementation;Implementations/Reference_Implementation/CreTAKE256/CreTAKE-K2K-PLAC256;1060;3140;;64;;2;1376;64;4900;;
+kex-03;kex;CreTAKE;CreTAKE-K2K-PLAC512;Reference_Implementation;Implementations/Reference_Implementation/CreTAKE512/CreTAKE-K2K-PLAC512;2116;6276;;128;;2;2688;128;9284;;
+kex-03;kex;CreTAKE;CreTAKE-K2K-PLAC512Star;Reference_Implementation;Implementations/Reference_Implementation/CreTAKE512/CreTAKE-K2K-PLAC512Star;2522;6682;;128;;2;3098;128;10920;;
+kex-03;kex;CreTAKE;CreTAKE-K2K-ZEN128;Reference_Implementation;Implementations/Reference_Implementation/CreTAKE128/CreTAKE-K2K-ZEN128;615;1303;;32;;2;592;32;2151;;
+kex-03;kex;CreTAKE;CreTAKE-K2K-ZEN256;Reference_Implementation;Implementations/Reference_Implementation/CreTAKE256/CreTAKE-K2K-ZEN256;1229;2605;;64;;2;1120;64;4301;;
+kex-03;kex;CreTAKE;CreTAKE-K2K-ZEN512;Reference_Implementation;Implementations/Reference_Implementation/CreTAKE512/CreTAKE-K2K-ZEN512;2458;5210;;128;;2;2176;128;8602;;
+kex-03;kex;CreTAKE;CreTAKE-K2S-PLAC128-BiT128;Reference_Implementation;Implementations/Reference_Implementation/CreTAKE128/CreTAKE-K2S-PLAC128-BiT128;1048;1864;;32;;2;1554;32;3314;;
+kex-03;kex;CreTAKE;CreTAKE-K2S-PLAC256-BiT256;Reference_Implementation;Implementations/Reference_Implementation/CreTAKE256/CreTAKE-K2S-PLAC256-BiT256;2144;4160;;64;;2;3108;64;7076;;
+kex-03;kex;CreTAKE;CreTAKE-K2S-PLAC512-BiT512;Reference_Implementation;Implementations/Reference_Implementation/CreTAKE512/CreTAKE-K2S-PLAC512-BiT512;5056;9024;;128;;2;6212;128;13931;;
+kex-03;kex;CreTAKE;CreTAKE-K2S-ZEN128-BiT128;Reference_Implementation;Implementations/Reference_Implementation/CreTAKE128/CreTAKE-K2S-ZEN128-BiT128;1048;1864;;32;;2;1271;32;3143;;
+kex-03;kex;CreTAKE;CreTAKE-K2S-ZEN256-BiT256;Reference_Implementation;Implementations/Reference_Implementation/CreTAKE256/CreTAKE-K2S-ZEN256-BiT256;2144;4160;;64;;2;2541;64;6733;;
+kex-03;kex;CreTAKE;CreTAKE-K2S-ZEN512-BiT512;Reference_Implementation;Implementations/Reference_Implementation/CreTAKE512/CreTAKE-K2S-ZEN512-BiT512;5056;9024;;128;;2;5082;128;13249;;
+kex-03;kex;CreTAKE;CreTAKE-S2K-BiT128-PLAC128;Reference_Implementation;Implementations/Reference_Implementation/CreTAKE128/CreTAKE-S2K-BiT128-PLAC128;1048;1864;;32;;2;720;32;3314;;
+kex-03;kex;CreTAKE;CreTAKE-S2K-BiT128-ZEN128;Reference_Implementation;Implementations/Reference_Implementation/CreTAKE128/CreTAKE-S2K-BiT128-ZEN128;1048;1864;;32;;2;592;32;3143;;
+kex-03;kex;CreTAKE;CreTAKE-S2K-BiT256-PLAC256;Reference_Implementation;Implementations/Reference_Implementation/CreTAKE256/CreTAKE-S2K-BiT256-PLAC256;2144;4160;;64;;2;1376;64;7076;;
+kex-03;kex;CreTAKE;CreTAKE-S2K-BiT256-ZEN256;Reference_Implementation;Implementations/Reference_Implementation/CreTAKE256/CreTAKE-S2K-BiT256-ZEN256;2144;4160;;64;;2;1120;64;6733;;
+kex-03;kex;CreTAKE;CreTAKE-S2K-BiT512-PLAC512;Reference_Implementation;Implementations/Reference_Implementation/CreTAKE512/CreTAKE-S2K-BiT512-PLAC512;5056;9024;;128;;2;2688;128;13931;;
+kex-03;kex;CreTAKE;CreTAKE-S2K-BiT512-ZEN512;Reference_Implementation;Implementations/Reference_Implementation/CreTAKE512/CreTAKE-S2K-BiT512-ZEN512;5056;9024;;128;;2;2176;128;13249;;
+kex-03;kex;CreTAKE;CreTAKE-S2S-BiT128-ePLAC128;Reference_Implementation;Implementations/Reference_Implementation/CreTAKE128/CreTAKE-S2S-BiT128-ePLAC128;1048;1864;;32;;2;64;32;4178;;
+kex-03;kex;CreTAKE;CreTAKE-S2S-BiT128-eZEN128;Reference_Implementation;Implementations/Reference_Implementation/CreTAKE128/CreTAKE-S2S-BiT128-eZEN128;1048;1864;;32;;2;64;32;4135;;
+kex-03;kex;CreTAKE;CreTAKE-S2S-BiT256-ePLAC256;Reference_Implementation;Implementations/Reference_Implementation/CreTAKE256/CreTAKE-S2S-BiT256-ePLAC256;2144;4160;;64;;2;64;64;9252;;
+kex-03;kex;CreTAKE;CreTAKE-S2S-BiT256-eZEN256;Reference_Implementation;Implementations/Reference_Implementation/CreTAKE256/CreTAKE-S2S-BiT256-eZEN256;2144;4160;;64;;2;64;64;9165;;
+kex-03;kex;CreTAKE;CreTAKE-S2S-BiT512-ePLAC512;Reference_Implementation;Implementations/Reference_Implementation/CreTAKE512/CreTAKE-S2S-BiT512-ePLAC512;5056;9024;;128;;2;64;128;18066;;
+kex-03;kex;CreTAKE;CreTAKE-S2S-BiT512-eZEN512;Reference_Implementation;Implementations/Reference_Implementation/CreTAKE512/CreTAKE-S2S-BiT512-eZEN512;5056;9024;;128;;2;64;128;17896;;
+kex-04;kex;DKEX;DKEX-128;Reference_Implementation;Implementations/Reference_Implementation/DKEX-128;1312;2560;;32;;3;2880;1312;6408;;
+kex-04;kex;DKEX;DKEX-256;Reference_Implementation;Implementations/Reference_Implementation/DKEX-256;2592;4896;;32;;3;5696;2592;12390;;
+kex-04;kex;DKEX;DKEX-512;Reference_Implementation;Implementations/Reference_Implementation/DKEX-512;2592;4896;;64;;3;9312;2592;15718;;
+kex-05;kex;Loom;LoomKEX-128;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/LoomKEX-128;1264;2288;;16;;4;2657;2657;4038;;
+kex-05;kex;Loom;LoomKEX-256;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/LoomKEX-256;1952;3680;;32;;4;4609;4609;7706;;
+kex-05;kex;Loom;LoomKEX-512;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/LoomKEX-512;3648;7104;;64;;4;9665;9665;16170;;
+kex-06;kex;MAMBA-NIKE;MAMBA-NIKE-128;Reference_Implementation;Implementations/Reference_Implementation/MAMBA-NIKE-128;1184;3232;;32;;1;32;0;1568;;
+kex-06;kex;MAMBA-NIKE;MAMBA-NIKE-192;Reference_Implementation;Implementations/Reference_Implementation/MAMBA-NIKE-192;1312;3360;;32;;1;32;0;1568;;
+kex-06;kex;MAMBA-NIKE;MAMBA-NIKE-256;Reference_Implementation;Implementations/Reference_Implementation/MAMBA-NIKE-256;1312;3360;;32;;1;32;0;1568;;
+kex-06;kex;MAMBA-NIKE;MAMBA-NIKE-384;Reference_Implementation;Implementations/Reference_Implementation/MAMBA-NIKE-384;2848;6944;;48;;1;48;0;3360;;
+kex-06;kex;MAMBA-NIKE;MAMBA-NIKE-512;Reference_Implementation;Implementations/Reference_Implementation/MAMBA-NIKE-512;2848;6944;;64;;1;64;0;3360;;
+kex-07;kex;NEV-AKE;NEV_AKE_1024_1409_ICCS;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/NEV-AKE-R2;1344;2720;;32;;2;4064;32;2688;;
+kex-07;kex;NEV-AKE;NEV_AKE_1024_769_C_ICCS;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/NEV-AKE-C2-c;1229;2490;;32;;2;3514;32;2253;;
+kex-07;kex;NEV-AKE;NEV_AKE_1024_769_ICCS;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/NEV-AKE-C2;1229;2490;;32;;2;3719;32;2458;;
+kex-07;kex;NEV-AKE;NEV_AKE_2048_1409_ICCS;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/NEV-AKE-R3;2688;5440;;64;;2;8128;64;5376;;
+kex-07;kex;NEV-AKE;NEV_AKE_2048_769_C_ICCS;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/NEV-AKE-C3-c;2458;4980;;64;;2;7028;64;4506;;
+kex-07;kex;NEV-AKE;NEV_AKE_2048_769_ICCS;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/NEV-AKE-C3;2458;4980;;64;;2;7438;64;4916;;
+kex-07;kex;NEV-AKE;NEV_AKE_512_1409_ICCS;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/NEV-AKE-R1;672;1360;;16;;2;2032;16;1344;;
+kex-07;kex;NEV-AKE;NEV_AKE_512_769_C_ICCS;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/NEV-AKE-C1-c;615;1246;;16;;2;1758;16;1127;;
+kex-07;kex;NEV-AKE;NEV_AKE_512_769_ICCS;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/NEV-AKE-C1;615;1246;;16;;2;1861;16;1230;;
+kex-08;kex;NIIKE;NIIKE-lv128;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation;4160;196;;64;;0;0;0;0;;
+kex-08;kex;NIIKE;NIIKE-lv256;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation;8960;336;;128;;0;0;0;0;;
+kex-08;kex;NIIKE;NIIKE-lv512;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation;41000;3036;;4100;;0;0;0;0;;
+kex-09;kex;TriQ-KEX;TriQ-KEX-128;Reference_Implementation;TriQ-KEX/Implementations/Reference_Implementation/TriQ-KEX-128;2054;2134;;16;;2;8258;8220;14328;;
+kex-09;kex;TriQ-KEX;TriQ-KEX-256;Reference_Implementation;TriQ-KEX/Implementations/Reference_Implementation/TriQ-KEX-256;6328;6488;;32;;2;25256;25040;43760;;
+kex-09;kex;TriQ-KEX;TriQ-KEX-384;Reference_Implementation;TriQ-KEX/Implementations/Reference_Implementation/TriQ-KEX-384;12255;12495;;48;;2;49037;48814;85276;;
+kex-09;kex;TriQ-KEX;TriQ-KEX-512;Reference_Implementation;TriQ-KEX/Implementations/Reference_Implementation/TriQ-KEX-512;19768;20088;;64;;2;79112;78832;137744;;
+sign-01;sig;Aigis-Sig+;Aigis-sig1;Reference_Implementation;Implementations/Implementations/Reference_Implementation/Aigis-Sig+-I;928;2800;;;2015;;;;;;
+sign-01;sig;Aigis-Sig+;Aigis-sig2;Reference_Implementation;Implementations/Implementations/Reference_Implementation/Aigis-Sig+-II;1824;4976;;;4533;;;;;;
+sign-01;sig;Aigis-Sig+;Aigis-sig3;Reference_Implementation;Implementations/Implementations/Reference_Implementation/Aigis-Sig+-III;4672;8800;;;9134;;;;;;
+sign-02;sig;BiT;BiT-128;Reference_Implementation;Implementations/Reference_Implementation/BiT-128;1048;1864;;;1504;;;;;;
+sign-02;sig;BiT;BiT-256;Reference_Implementation;Implementations/Reference_Implementation/BiT-256;2144;4160;;;3456;;;;;;
+sign-02;sig;BiT;BiT-512;Reference_Implementation;Implementations/Reference_Implementation/BiT-512;5056;9024;;;6695;;;;;;
+sign-03;sig;CEDRUS+C;CEDRUSC-160f;Reference_Implementation;Implementations/Reference_Implementation/CEDRUSC-160f;40;80;;;19812;;;;;;
+sign-03;sig;CEDRUS+C;CEDRUSC-160s;Reference_Implementation;Implementations/Reference_Implementation/CEDRUSC-160s;40;80;;;9460;;;;;;
+sign-03;sig;CEDRUS+C;CEDRUSC-256f;Reference_Implementation;Implementations/Reference_Implementation/CEDRUSC-256f;64;128;;;43548;;;;;;
+sign-03;sig;CEDRUS+C;CEDRUSC-256s;Reference_Implementation;Implementations/Reference_Implementation/CEDRUSC-256s;64;128;;;24104;;;;;;
+sign-03;sig;CEDRUS+C;CEDRUSC-384f;Reference_Implementation;Implementations/Reference_Implementation/CEDRUSC-384f;96;192;;;75988;;;;;;
+sign-03;sig;CEDRUS+C;CEDRUSC-384s;Reference_Implementation;Implementations/Reference_Implementation/CEDRUSC-384s;96;192;;;61572;;;;;;
+sign-03;sig;CEDRUS+C;CEDRUSC-512f;Reference_Implementation;Implementations/Reference_Implementation/CEDRUSC-512f;128;256;;;121520;;;;;;
+sign-03;sig;CEDRUS+C;CEDRUSC-512s;Reference_Implementation;Implementations/Reference_Implementation/CEDRUSC-512s;128;256;;;98212;;;;;;
+sign-04;sig;CEDRUS-alpha;CEDRUSALPHA-160f;Reference_Implementation;Implementations/Reference_Implementation/CEDRUSALPHA-160f;40;80;;;19420;;;;;;
+sign-04;sig;CEDRUS-alpha;CEDRUSALPHA-160s;Reference_Implementation;Implementations/Reference_Implementation/CEDRUSALPHA-160s;40;80;;;10300;;;;;;
+sign-04;sig;CEDRUS-alpha;CEDRUSALPHA-256f;Reference_Implementation;Implementations/Reference_Implementation/CEDRUSALPHA-256f;64;128;;;43296;;;;;;
+sign-04;sig;CEDRUS-alpha;CEDRUSALPHA-256s;Reference_Implementation;Implementations/Reference_Implementation/CEDRUSALPHA-256s;64;128;;;25568;;;;;;
+sign-04;sig;CEDRUS-alpha;CEDRUSALPHA-384f;Reference_Implementation;Implementations/Reference_Implementation/CEDRUSALPHA-384f;96;192;;;76176;;;;;;
+sign-04;sig;CEDRUS-alpha;CEDRUSALPHA-384s;Reference_Implementation;Implementations/Reference_Implementation/CEDRUSALPHA-384s;96;192;;;60672;;;;;;
+sign-04;sig;CEDRUS-alpha;CEDRUSALPHA-512f;Reference_Implementation;Implementations/Reference_Implementation/CEDRUSALPHA-512f;128;256;;;127488;;;;;;
+sign-04;sig;CEDRUS-alpha;CEDRUSALPHA-512s;Reference_Implementation;Implementations/Reference_Implementation/CEDRUSALPHA-512s;128;256;;;98048;;;;;;
+sign-05;sig;Chinith;sm4th_d3_128f_loose;Reference_Implementation;Implementations/Reference_Implementation/sm4th_d3_128f_loose;32;32;;;6724;;;;;;
+sign-05;sig;Chinith;sm4th_d3_128f_tight;Reference_Implementation;Implementations/Reference_Implementation/sm4th_d3_128f_tight;32;32;;;11864;;;;;;
+sign-05;sig;Chinith;sm4th_d3_128s_loose;Reference_Implementation;Implementations/Reference_Implementation/sm4th_d3_128s_loose;32;32;;;5056;;;;;;
+sign-05;sig;Chinith;sm4th_d3_128s_tight;Reference_Implementation;Implementations/Reference_Implementation/sm4th_d3_128s_tight;32;32;;;9176;;;;;;
+sign-05;sig;Chinith;sm4th_em_d2_128f_loose;Reference_Implementation;Implementations/Reference_Implementation/sm4th_em_d2_128f_loose;32;32;;;4932;;;;;;
+sign-05;sig;Chinith;sm4th_em_d2_128f_tight;Reference_Implementation;Implementations/Reference_Implementation/sm4th_em_d2_128f_tight;32;32;;;9450;;;;;;
+sign-05;sig;Chinith;sm4th_em_d2_128s_loose;Reference_Implementation;Implementations/Reference_Implementation/sm4th_em_d2_128s_loose;32;32;;;3818;;;;;;
+sign-05;sig;Chinith;sm4th_em_d2_128s_tight;Reference_Implementation;Implementations/Reference_Implementation/sm4th_em_d2_128s_tight;32;32;;;7556;;;;;;
+sign-05;sig;Chinith;ublockith_d3_256f;Reference_Implementation;Implementations/Reference_Implementation/ublockith_d3_256f;64;64;;;31556;;;;;;
+sign-05;sig;Chinith;ublockith_d3_256s;Reference_Implementation;Implementations/Reference_Implementation/ublockith_d3_256s;64;64;;;24144;;;;;;
+sign-05;sig;Chinith;ublockith_em_d3_256f;Reference_Implementation;Implementations/Reference_Implementation/ublockith_em_d3_256f;64;64;;;25028;;;;;;
+sign-05;sig;Chinith;ublockith_em_d3_256s;Reference_Implementation;Implementations/Reference_Implementation/ublockith_em_d3_256s;64;64;;;19056;;;;;;
+sign-05;sig;Chinith;vistrutith_d3_512f;Reference_Implementation;Implementations/Reference_Implementation/vistrutith_d3_512f;128;128;;;106788;;;;;;
+sign-05;sig;Chinith;vistrutith_d3_512s;Reference_Implementation;Implementations/Reference_Implementation/vistrutith_d3_512s;128;128;;;83004;;;;;;
+sign-06;sig;COMPASS-SIG;COMPASS-SIG-128;Reference_Implementation;Implementations/Reference_Implementation/COMPASS-SIG-128;1664;960;;;2080;;;;;;
+sign-06;sig;COMPASS-SIG;COMPASS-SIG-256;Reference_Implementation;Implementations/Reference_Implementation/COMPASS-SIG-256;3616;2144;;;4080;;;;;;
+sign-06;sig;COMPASS-SIG;COMPASS-SIG-384;Reference_Implementation;Implementations/Reference_Implementation/COMPASS-SIG-384;5792;3136;;;7344;;;;;;
+sign-06;sig;COMPASS-SIG;COMPASS-SIG-512;Reference_Implementation;Implementations/Reference_Implementation/COMPASS-SIG-512;7648;4608;;;9024;;;;;;
+sign-07;sig;CS;CS_128;Reference_Implementation;Implementations/Reference_Implementation/CS-128;976;1888;;;1548;;;;;;
+sign-07;sig;CS;CS_256;Reference_Implementation;Implementations/Reference_Implementation/CS-256;1760;3968;;;3164;;;;;;
+sign-07;sig;CS;CS_512;Reference_Implementation;Implementations/Reference_Implementation/CS-512;4288;7808;;;5975;;;;;;
+sign-08;sig;DARTS;DARTS128;Reference_Implementation;Implementations/Reference_Implementation/DARTS128;1120;1536;;;1449;;;;;;
+sign-08;sig;DARTS;DARTS256;Reference_Implementation;Implementations/Reference_Implementation/DARTS256;2208;2880;;;2489;;;;;;
+sign-08;sig;DARTS;DARTS512;Reference_Implementation;Implementations/Reference_Implementation/DARTS512;4672;6016;;;5851;;;;;;
+sign-09;sig;DOVE;dove_classic_128;Reference_Implementation;Implementations/Digital_Signature-DOVE-x86-reference_implementation/API_PKC/Implementations/Reference_Implementation/DOVE_classic_ref;191646;192990;;;136;;;;;;
+sign-09;sig;DOVE;dove_classic_256;Reference_Implementation;Implementations/Digital_Signature-DOVE-x86-reference_implementation/API_PKC/Implementations/Reference_Implementation/DOVE_classic_ref;2050352;1925976;;;296;;;;;;
+sign-09;sig;DOVE;dove_classic_512;Reference_Implementation;Implementations/Digital_Signature-DOVE-x86-reference_implementation/API_PKC/Implementations/Reference_Implementation/DOVE_classic_ref;22833052;20181508;;;648;;;;;;
+sign-09;sig;DOVE;dove_pkc_skc_128;Reference_Implementation;Implementations/Digital_Signature-DOVE-x86-reference_implementation/API_PKC/Implementations/Reference_Implementation/DOVE_pkc_skc_ref;43576;24;;;136;;;;;;
+sign-09;sig;DOVE;dove_pkc_skc_256;Reference_Implementation;Implementations/Digital_Signature-DOVE-x86-reference_implementation/API_PKC/Implementations/Reference_Implementation/DOVE_pkc_skc_ref;446992;40;;;296;;;;;;
+sign-09;sig;DOVE;dove_pkc_skc_512;Reference_Implementation;Implementations/Digital_Signature-DOVE-x86-reference_implementation/API_PKC/Implementations/Reference_Implementation/DOVE_pkc_skc_ref;5062192;72;;;648;;;;;;
+sign-10;sig;Facto-DSA;Facto-DSA-128;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Facto-DSA-128;40040;3094;;;40;;;;;;
+sign-10;sig;Facto-DSA;Facto-DSA-256;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Facto-DSA-256;456960;11662;;;68;;;;;;
+sign-10;sig;Facto-DSA;Facto-DSA-512;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Facto-DSA-512;5674240;61922;;;128;;;;;;
+sign-11;sig;FlexTree;Flextree-160f;Reference_Implementation;Implementations/Reference_Implementation/Flextree-160f;40;80;;;18672;;;;;;
+sign-11;sig;FlexTree;Flextree-160s;Reference_Implementation;Implementations/Reference_Implementation/Flextree-160s;40;80;;;9580;;;;;;
+sign-11;sig;FlexTree;Flextree-256f;Reference_Implementation;Implementations/Reference_Implementation/Flextree-256f;64;128;;;46856;;;;;;
+sign-11;sig;FlexTree;Flextree-256s;Reference_Implementation;Implementations/Reference_Implementation/Flextree-256s;64;128;;;25420;;;;;;
+sign-11;sig;FlexTree;Flextree-384f;Reference_Implementation;Implementations/Reference_Implementation/Flextree-384f;96;192;;;73396;;;;;;
+sign-11;sig;FlexTree;Flextree-384s;Reference_Implementation;Implementations/Reference_Implementation/Flextree-384s;96;192;;;60180;;;;;;
+sign-11;sig;FlexTree;Flextree-512f;Reference_Implementation;Implementations/Reference_Implementation/Flextree-512f;128;256;;;117296;;;;;;
+sign-11;sig;FlexTree;Flextree-512s;Reference_Implementation;Implementations/Reference_Implementation/Flextree-512s;128;256;;;94948;;;;;;
+sign-12;sig;Galas;Galas-160F;Reference_Implementation;Implementations/Reference_Implementation/Galas-160F;40;40;;;5964;;;;;;
+sign-12;sig;Galas;Galas-160S;Reference_Implementation;Implementations/Reference_Implementation/Galas-160S;40;40;;;4812;;;;;;
+sign-12;sig;Galas;Galas-256F;Reference_Implementation;Implementations/Reference_Implementation/Galas-256F;64;64;;;15950;;;;;;
+sign-12;sig;Galas;Galas-256S;Reference_Implementation;Implementations/Reference_Implementation/Galas-256S;64;64;;;12114;;;;;;
+sign-12;sig;Galas;Galas-384F;Reference_Implementation;Implementations/Reference_Implementation/Galas-384F;96;96;;;33384;;;;;;
+sign-12;sig;Galas;Galas-384S;Reference_Implementation;Implementations/Reference_Implementation/Galas-384S;96;96;;;27784;;;;;;
+sign-12;sig;Galas;Galas-512F;Reference_Implementation;Implementations/Reference_Implementation/Galas-512F;128;128;;;59416;;;;;;
+sign-12;sig;Galas;Galas-512S;Reference_Implementation;Implementations/Reference_Implementation/Galas-512S;128;128;;;49516;;;;;;
+sign-13;sig;GreatWall;GreatWall128f;Reference_Implementation;Implementations/Reference_Implementation/GreatWall128f;36;36;;;3396;;;;;;
+sign-13;sig;GreatWall;GreatWall128s;Reference_Implementation;Implementations/Reference_Implementation/GreatWall128s;36;36;;;2758;;;;;;
+sign-13;sig;GreatWall;GreatWall192f;Reference_Implementation;Implementations/Reference_Implementation/GreatWall192f;50;50;;;8012;;;;;;
+sign-13;sig;GreatWall;GreatWall192s;Reference_Implementation;Implementations/Reference_Implementation/GreatWall192s;50;50;;;6804;;;;;;
+sign-13;sig;GreatWall;GreatWall256f;Reference_Implementation;Implementations/Reference_Implementation/GreatWall256f;66;66;;;14260;;;;;;
+sign-13;sig;GreatWall;GreatWall256s;Reference_Implementation;Implementations/Reference_Implementation/GreatWall256s;66;66;;;12236;;;;;;
+sign-13;sig;GreatWall;GreatWall512f;Reference_Implementation;Implementations/Reference_Implementation/GreatWall512f;132;132;;;57812;;;;;;
+sign-13;sig;GreatWall;GreatWall512s;Reference_Implementation;Implementations/Reference_Implementation/GreatWall512s;132;132;;;50012;;;;;;
+sign-14;sig;Lynxer;Lynxer-160f;Reference_Implementation;Implementations/Reference_Implementation/Lynxer-160f;40;40;;;5801;;;;;;
+sign-14;sig;Lynxer;Lynxer-160s;Reference_Implementation;Implementations/Reference_Implementation/Lynxer-160s;40;40;;;4607;;;;;;
+sign-14;sig;Lynxer;Lynxer-256f;Reference_Implementation;Implementations/Reference_Implementation/Lynxer-256f;64;64;;;15097;;;;;;
+sign-14;sig;Lynxer;Lynxer-256s;Reference_Implementation;Implementations/Reference_Implementation/Lynxer-256s;64;64;;;12191;;;;;;
+sign-14;sig;Lynxer;Lynxer-384f;Reference_Implementation;Implementations/Reference_Implementation/Lynxer-384f;96;96;;;34109;;;;;;
+sign-14;sig;Lynxer;Lynxer-384s;Reference_Implementation;Implementations/Reference_Implementation/Lynxer-384s;96;96;;;27495;;;;;;
+sign-14;sig;Lynxer;Lynxer-512f;Reference_Implementation;Implementations/Reference_Implementation/Lynxer-512f;128;128;;;61091;;;;;;
+sign-14;sig;Lynxer;Lynxer-512s;Reference_Implementation;Implementations/Reference_Implementation/Lynxer-512s;128;128;;;48879;;;;;;
+sign-15;sig;MORNING-ATLAS;lwrdsa128;Reference_Implementation;Implementation/Reference_Implementation/lwrdsa128;1328;2128;;;2081;;;;;;
+sign-15;sig;MORNING-ATLAS;lwrdsa192;Reference_Implementation;Implementation/Reference_Implementation/lwrdsa192;2112;3152;;;3365;;;;;;
+sign-15;sig;MORNING-ATLAS;lwrdsa256;Reference_Implementation;Implementation/Reference_Implementation/lwrdsa256;2848;4016;;;4656;;;;;;
+sign-15;sig;MORNING-ATLAS;lwrdsa512;Reference_Implementation;Implementation/Reference_Implementation/lwrdsa512;6688;7920;;;10081;;;;;;
+sign-16;sig;Octarine;Octarine-128;Reference_Implementation;Implementations/Reference_Implementation/Octarine-128;1344;2432;;;2564;;;;;;
+sign-16;sig;Octarine;Octarine-256;Reference_Implementation;Implementations/Reference_Implementation/Octarine-256;2368;4608;;;5449;;;;;;
+sign-16;sig;Octarine;Octarine-512;Reference_Implementation;Implementations/Reference_Implementation/Octarine-512;5184;11776;;;14713;;;;;;
+sign-17;sig;OPS Digital Signature Algorithm;OPSsig-128;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/OPSsig-128;2560;3840;;;4349;;;;;;
+sign-17;sig;OPS Digital Signature Algorithm;OPSsig-256;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/OPSsig-256;3392;5056;;;5540;;;;;;
+sign-17;sig;OPS Digital Signature Algorithm;OPSsig-512;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/OPSsig-512;6720;9920;;;12021;;;;;;
+sign-18;sig;Origami;Origami-128;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Origami-128;2996;16;;;116;;;;;;
+sign-18;sig;Origami;Origami-256;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Origami-256;14968;32;;;516;;;;;;
+sign-18;sig;Origami;Origami-384;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Origami-384;27940;48;;;948;;;;;;
+sign-18;sig;Origami;Origami-512;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Origami-512;35924;64;;;1220;;;;;;
+sign-19;sig;Phoenix;Phoenix-SHAKE-128f;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Phoenix-SHAKE-128f;32;64;;;13670;;;;;;
+sign-19;sig;Phoenix;Phoenix-SHAKE-128s;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Phoenix-SHAKE-128s;32;64;;;6258;;;;;;
+sign-19;sig;Phoenix;Phoenix-SHAKE-192f;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Phoenix-SHAKE-192f;48;96;;;30766;;;;;;
+sign-19;sig;Phoenix;Phoenix-SHAKE-192s;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Phoenix-SHAKE-192s;48;96;;;13332;;;;;;
+sign-19;sig;Phoenix;Phoenix-SHAKE-256f;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Phoenix-SHAKE-256f;64;128;;;44906;;;;;;
+sign-19;sig;Phoenix;Phoenix-SHAKE-256s;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Phoenix-SHAKE-256s;64;128;;;24618;;;;;;
+sign-19;sig;Phoenix;Phoenix-SHAKE-384f;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Phoenix-SHAKE-384f;96;192;;;88442;;;;;;
+sign-19;sig;Phoenix;Phoenix-SHAKE-384s;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Phoenix-SHAKE-384s;96;192;;;54726;;;;;;
+sign-19;sig;Phoenix;Phoenix-SHAKE-512f;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Phoenix-SHAKE-512f;128;256;;;138454;;;;;;
+sign-19;sig;Phoenix;Phoenix-SHAKE-512s;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Phoenix-SHAKE-512s;128;256;;;98476;;;;;;
+sign-19;sig;Phoenix;Phoenix-SM3-128f;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Phoenix-SM3-128f;32;64;;;13670;;;;;;
+sign-19;sig;Phoenix;Phoenix-SM3-128s;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Phoenix-SM3-128s;32;64;;;6258;;;;;;
+sign-19;sig;Phoenix;Phoenix-SM3-192f;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Phoenix-SM3-192f;48;96;;;30766;;;;;;
+sign-19;sig;Phoenix;Phoenix-SM3-192s;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Phoenix-SM3-192s;48;96;;;13332;;;;;;
+sign-19;sig;Phoenix;Phoenix-SM3-256f;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Phoenix-SM3-256f;64;128;;;44906;;;;;;
+sign-19;sig;Phoenix;Phoenix-SM3-256s;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Phoenix-SM3-256s;64;128;;;24618;;;;;;
+sign-19;sig;Phoenix;Phoenix-SM3-384f;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Phoenix-SM3-384f;96;192;;;88442;;;;;;
+sign-19;sig;Phoenix;Phoenix-SM3-384s;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Phoenix-SM3-384s;96;192;;;54726;;;;;;
+sign-19;sig;Phoenix;Phoenix-SM3-512f;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Phoenix-SM3-512f;128;256;;;138454;;;;;;
+sign-19;sig;Phoenix;Phoenix-SM3-512s;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Phoenix-SM3-512s;128;256;;;98476;;;;;;
+sign-20;sig;Qing Luan;QingLuan-128;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/QingLuan-128;77;32;;;18720;;;;;;
+sign-20;sig;Qing Luan;QingLuan-256;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/QingLuan-256;153;64;;;74248;;;;;;
+sign-20;sig;Qing Luan;QingLuan-384;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/QingLuan-384;227;96;;;164940;;;;;;
+sign-20;sig;Qing Luan;QingLuan-512;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/QingLuan-512;302;128;;;292816;;;;;;
+sign-21;sig;ReSolveD-alpha;ReSolveD-alpha-160f;Reference_Implementation;Implementations/Reference_Implementation/ReSolveD-alpha-160f;121;40;;;6851;;;;;;
+sign-21;sig;ReSolveD-alpha;ReSolveD-alpha-160s;Reference_Implementation;Implementations/Reference_Implementation/ReSolveD-alpha-160s;121;40;;;5307;;;;;;
+sign-21;sig;ReSolveD-alpha;ReSolveD-alpha-256f;Reference_Implementation;Implementations/Reference_Implementation/ReSolveD-alpha-256f;194;64;;;17932;;;;;;
+sign-21;sig;ReSolveD-alpha;ReSolveD-alpha-256s;Reference_Implementation;Implementations/Reference_Implementation/ReSolveD-alpha-256s;194;64;;;13973;;;;;;
+sign-21;sig;ReSolveD-alpha;ReSolveD-alpha-384f;Reference_Implementation;Implementations/Reference_Implementation/ReSolveD-alpha-384f;288;96;;;40469;;;;;;
+sign-21;sig;ReSolveD-alpha;ReSolveD-alpha-384s;Reference_Implementation;Implementations/Reference_Implementation/ReSolveD-alpha-384s;288;96;;;31575;;;;;;
+sign-21;sig;ReSolveD-alpha;ReSolveD-alpha-512f;Reference_Implementation;Implementations/Reference_Implementation/ReSolveD-alpha-512f;385;128;;;72611;;;;;;
+sign-21;sig;ReSolveD-alpha;ReSolveD-alpha-512s;Reference_Implementation;Implementations/Reference_Implementation/ReSolveD-alpha-512s;385;128;;;56239;;;;;;
+sign-22;sig;Rhyme;Rhyme-SHAKE-128;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Rhyme-SHAKE/Rhyme-SHAKE-128;800;11072;;;5156;;;;;;
+sign-22;sig;Rhyme;Rhyme-SHAKE-256;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Rhyme-SHAKE/Rhyme-SHAKE-256;1824;22336;;;10308;;;;;;
+sign-22;sig;Rhyme;Rhyme-SHAKE-384;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Rhyme-SHAKE/Rhyme-SHAKE-384;2720;45760;;;14436;;;;;;
+sign-22;sig;Rhyme;Rhyme-SHAKE-512;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Rhyme-SHAKE/Rhyme-SHAKE-512;3872;44864;;;20612;;;;;;
+sign-22;sig;Rhyme;Rhyme-SM3-128;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Rhyme-SM3/Rhyme-SM3-128;800;11072;;;5156;;;;;;
+sign-22;sig;Rhyme;Rhyme-SM3-256;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Rhyme-SM3/Rhyme-SM3-256;1824;22336;;;10308;;;;;;
+sign-22;sig;Rhyme;Rhyme-SM3-384;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Rhyme-SM3/Rhyme-SM3-384;2720;45760;;;14436;;;;;;
+sign-22;sig;Rhyme;Rhyme-SM3-512;Reference_Implementation;Implementations and Test_Vectors/Implementations/Reference_Implementation/Rhyme-SM3/Rhyme-SM3-512;3872;44864;;;20612;;;;;;
+sign-23;sig;Shuttle;SHUTTLE-128;Reference_Implementation;Implementation codes and test vectors/Shuttle 算法实现源代码及测试向量/Implementations/Reference_Implementation/SHUTTLE-128;1264;2288;;;1183;;;;;;
+sign-23;sig;Shuttle;SHUTTLE-256;Reference_Implementation;Implementation codes and test vectors/Shuttle 算法实现源代码及测试向量/Implementations/Reference_Implementation/SHUTTLE-256;1952;3680;;;2417;;;;;;
+sign-23;sig;Shuttle;SHUTTLE-512;Reference_Implementation;Implementation codes and test vectors/Shuttle 算法实现源代码及测试向量/Implementations/Reference_Implementation/SHUTTLE-512;3648;7104;;;5001;;;;;;
+sign-24;sig;Sigurd;Sigurd128_REF;Reference_Implementation;Implementations/Reference_Implementation/Sigurd-128;112;80;;;62868;;;;;;
+sign-24;sig;Sigurd;Sigurd256_REF;Reference_Implementation;Implementations/Reference_Implementation/Sigurd-256;212;128;;;137412;;;;;;
+sign-24;sig;Sigurd;Sigurd512_REF;Reference_Implementation;Implementations/Reference_Implementation/Sigurd-512;435;256;;;494532;;;;;;
+sign-25;sig;SQIsign2D2;SQISign2Dsquare-Level1-eff_compressed;Reference_Implementation;Implementations/Reference_Implementation/SQISign2Dsquare-Level1-eff;65;240;;;168;;;;;;
+sign-25;sig;SQIsign2D2;SQISign2Dsquare-Level1-eff_uncompressed;Reference_Implementation;Implementations/Reference_Implementation/SQISign2Dsquare-Level1-eff;64;488;;;200;;;;;;
+sign-25;sig;SQIsign2D2;SQISign2Dsquare-Level1-sec_compressed;Reference_Implementation;Implementations/Reference_Implementation/SQISign2Dsquare-Level1-sec;69;257;;;178;;;;;;
+sign-25;sig;SQIsign2D2;SQISign2Dsquare-Level1-sec_uncompressed;Reference_Implementation;Implementations/Reference_Implementation/SQISign2Dsquare-Level1-sec;68;521;;;212;;;;;;
+sign-25;sig;SQIsign2D2;SQISign2Dsquare-Level2-eff_compressed;Reference_Implementation;Implementations/Reference_Implementation/SQISign2Dsquare-Level2-eff;81;298;;;208;;;;;;
+sign-25;sig;SQIsign2D2;SQISign2Dsquare-Level2-eff_uncompressed;Reference_Implementation;Implementations/Reference_Implementation/SQISign2Dsquare-Level2-eff;80;610;;;248;;;;;;
+sign-25;sig;SQIsign2D2;SQISign2Dsquare-Level2-sec_compressed;Reference_Implementation;Implementations/Reference_Implementation/SQISign2Dsquare-Level2-sec;85;315;;;218;;;;;;
+sign-25;sig;SQIsign2D2;SQISign2Dsquare-Level2-sec_uncompressed;Reference_Implementation;Implementations/Reference_Implementation/SQISign2Dsquare-Level2-sec;84;643;;;260;;;;;;
+sign-25;sig;SQIsign2D2;SQISign2Dsquare-Level3-eff_compressed;Reference_Implementation;Implementations/Reference_Implementation/SQISign2Dsquare-Level3-eff;129;468;;;326;;;;;;
+sign-25;sig;SQIsign2D2;SQISign2Dsquare-Level3-eff_uncompressed;Reference_Implementation;Implementations/Reference_Implementation/SQISign2Dsquare-Level3-eff;128;976;;;392;;;;;;
+sign-25;sig;SQIsign2D2;SQISign2Dsquare-Level3-sec_compressed;Reference_Implementation;Implementations/Reference_Implementation/SQISign2Dsquare-Level3-sec;133;489;;;338;;;;;;
+sign-25;sig;SQIsign2D2;SQISign2Dsquare-Level3-sec_uncompressed;Reference_Implementation;Implementations/Reference_Implementation/SQISign2Dsquare-Level3-sec;132;1009;;;404;;;;;;
+sign-25;sig;SQIsign2D2;SQISign2Dsquare-Level5-eff_compressed;Reference_Implementation;Implementations/Reference_Implementation/SQISign2Dsquare-Level5-eff;257;936;;;648;;;;;;
+sign-25;sig;SQIsign2D2;SQISign2Dsquare-Level5-eff_uncompressed;Reference_Implementation;Implementations/Reference_Implementation/SQISign2Dsquare-Level5-eff;256;1952;;;776;;;;;;
+sign-25;sig;SQIsign2D2;SQISign2Dsquare-Level5-sec_compressed;Reference_Implementation;Implementations/Reference_Implementation/SQISign2Dsquare-Level5-sec;269;982;;;678;;;;;;
+sign-25;sig;SQIsign2D2;SQISign2Dsquare-Level5-sec_uncompressed;Reference_Implementation;Implementations/Reference_Implementation/SQISign2Dsquare-Level5-sec;268;2046;;;812;;;;;;
+sign-26;sig;SQIsign2D-push1/2;SQIsign2D-lvl1;Reference_Implementation;Implementations/sqisign2d_lvl1;64;456;;;150;;;;;;
+sign-26;sig;SQIsign2D-push1/2;SQIsign2D-lvl2;Reference_Implementation;Implementations/sqisign2d_lvl2;96;676;;;218;;;;;;
+sign-26;sig;SQIsign2D-push1/2;SQIsign2D-lvl3;Reference_Implementation;Implementations/sqisign2d_lvl3;128;900;;;293;;;;;;
+sign-26;sig;SQIsign2D-push1/2;SQIsign2D-lvl4;Reference_Implementation;Implementations/sqisign2d_lvl4;262;1838;;;593;;;;;;
+sign-27;sig;SQIsignTriangle;SQIsignTriangle_lvl1;Reference_Implementation;Implementations/Reference_Implementation/SQIsignTriangle_lvl1;65;353;;;204;;;;;;
+sign-27;sig;SQIsignTriangle;SQIsignTriangle_lvl2;Reference_Implementation;Implementations/Reference_Implementation/SQIsignTriangle_lvl2;81;437;;;255;;;;;;
+sign-27;sig;SQIsignTriangle;SQIsignTriangle_lvl5;Reference_Implementation;Implementations/Reference_Implementation/SQIsignTriangle_lvl5;129;701;;;408;;;;;;
+sign-27;sig;SQIsignTriangle;SQIsignTriangle_lvl6;Reference_Implementation;Implementations/Reference_Implementation/SQIsignTriangle_lvl6;257;1409;;;816;;;;;;
+sign-28;sig;SYDO;sydo_160f;Reference_Implementation;Implementations/Reference_Implementation/sydo_160f;80;174;;;6724;;;;;;
+sign-28;sig;SYDO;sydo_160s;Reference_Implementation;Implementations/Reference_Implementation/sydo_160s;80;174;;;5428;;;;;;
+sign-28;sig;SYDO;sydo_256f;Reference_Implementation;Implementations/Reference_Implementation/sydo_256f;128;278;;;17604;;;;;;
+sign-28;sig;SYDO;sydo_256s;Reference_Implementation;Implementations/Reference_Implementation/sydo_256s;128;278;;;14444;;;;;;
+sign-28;sig;SYDO;sydo_512f;Reference_Implementation;Implementations/Reference_Implementation/sydo_512f;246;534;;;67716;;;;;;
+sign-28;sig;SYDO;sydo_512s;Reference_Implementation;Implementations/Reference_Implementation/sydo_512s;246;534;;;56672;;;;;;
+sign-29;sig;Tins;Tins128;Reference_Implementation;Implementations/Reference_Implementation/Tins128;51;32;;;3284;;;;;;
+sign-29;sig;Tins;Tins256;Reference_Implementation;Implementations/Reference_Implementation/Tins256;98;64;;;13012;;;;;;
+sign-29;sig;Tins;Tins512;Reference_Implementation;Implementations/Reference_Implementation/Tins512;195;128;;;51187;;;;;;
+sign-30;sig;TRINE;TRINE-128-Balanced;Reference_Implementation;Implementations/Reference_Implementation/TRINE-128-balanced;16004;32;;;3156;;;;;;
+sign-30;sig;TRINE;TRINE-128-ShortSig;Reference_Implementation;Implementations/Reference_Implementation/TRINE-128-ShortSig;63920;32;;;1652;;;;;;
+sign-30;sig;TRINE;TRINE-256-Balanced;Reference_Implementation;Implementations/Reference_Implementation/TRINE-256-balanced;96064;64;;;11712;;;;;;
+sign-30;sig;TRINE;TRINE-256-ShortSig;Reference_Implementation;Implementations/Reference_Implementation/TRINE-256-ShortSig;384064;64;;;5968;;;;;;
+sign-30;sig;TRINE;TRINE-512-Balanced;Reference_Implementation;Implementations/Reference_Implementation/TRINE-512-balanced;797290;128;;;46565;;;;;;
+sign-30;sig;TRINE;TRINE-512-ShortSig;Reference_Implementation;Implementations/Reference_Implementation/TRINE-512-ShortSig;3188776;128;;;23672;;;;;;
+sign-31;sig;TSUOV;TSUOV_128;Reference_Implementation;Implementations/Digital_Signature-TSUOV-x86-Reference_Implementation/API_PKC/Implementations/Reference_Implementation/TSUOV_128;779;32;;;896;;;;;;
+sign-31;sig;TSUOV;TSUOV_256;Reference_Implementation;Implementations/Digital_Signature-TSUOV-x86-Reference_Implementation/API_PKC/Implementations/Reference_Implementation/TSUOV_256;2170;64;;;2412;;;;;;
+sign-31;sig;TSUOV;TSUOV_512;Reference_Implementation;Implementations/Digital_Signature-TSUOV-x86-Reference_Implementation/API_PKC/Implementations/Reference_Implementation/TSUOV_512;21319;128;;;2939;;;;;;
+sign-32;sig;UVW signature;UVW-128;Reference_Implementation;Implementations/Reference_Implementation/UVW-128;5897612;40;;;1244;;;;;;
+sign-32;sig;UVW signature;UVW-256;Reference_Implementation;Implementations/Reference_Implementation/UVW-256;23040012;40;;;2444;;;;;;
+sign-32;sig;UVW signature;UVW-512;Reference_Implementation;Implementations/Reference_Implementation/UVW-512;95160012;72;;;4956;;;;;;
+sign-33;sig;VDOO;VDOO-128;Reference_Implementation;Implementation/Reference_Implementation/vdoo_128;330855;342790;;;85;;;;;;
+sign-33;sig;VDOO;VDOO-256;Reference_Implementation;Implementation/Reference_Implementation/vdoo_256;4289250;4388307;;;316;;;;;;
+sign-33;sig;VDOO;VDOO-512;Reference_Implementation;Implementation/Reference_Implementation/vdoo_512;20229300;20474382;;;471;;;;;;
+sign-34;sig;YuanYang.DSA;yuanyang-1024;Reference_Implementation;Implementations/Reference_Implementation/yuanyang-1024;1570;31264;;;1150;;;;;;
+sign-34;sig;YuanYang.DSA;yuanyang-2048;Reference_Implementation;Implementations/Reference_Implementation/yuanyang-2048;3330;62720;;;2364;;;;;;
+sign-34;sig;YuanYang.DSA;yuanyang-512;Reference_Implementation;Implementations/Reference_Implementation/yuanyang-512;738;15584;;;561;;;;;;

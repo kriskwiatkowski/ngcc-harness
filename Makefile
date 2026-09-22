@@ -5,12 +5,15 @@
 #   make -C kem-01       one candidate (make -C kem-01 test: its KATs)
 #   make status          re-aggregate results/ without re-running anything
 #   make reproduce       tools/reproduce.sh
+#   make check-vulnerabilities  validate stable issue IDs and checker coverage
+#   make check-reference-data   validate all specs and extracted parameters
 #   make manifest        (re)compute kat.sha256 manifests (needs the Test_Vectors present)
 #   make clean           remove all build outputs, libraries, results, harness
 
+NGCC1 ?= ../ngcc1
 CANDIDATES := $(sort $(patsubst %/Makefile,%,$(wildcard sign-*/Makefile kem-*/Makefile kex-*/Makefile hash-*/Makefile)))
 
-.PHONY: all harness tools exploits test status reproduce manifest clean $(CANDIDATES) \
+.PHONY: all harness tools exploits test status reproduce design-audit check-vulnerabilities check-reference-data sync-reference-data manifest clean $(CANDIDATES) \
         $(addprefix test-,$(CANDIDATES)) $(addprefix manifest-,$(CANDIDATES)) $(addprefix clean-,$(CANDIDATES))
 
 all: harness tools $(CANDIDATES) exploits
@@ -24,10 +27,12 @@ tools:
 $(CANDIDATES): harness | results
 	@$(MAKE) --no-print-directory -C $@ libs > results/build-$@.log 2>&1 && echo "BUILD $@ ok" || { echo "BUILD $@ FAILED (results/build-$@.log)"; }
 
-exploits: sign-03 kex-02 sign-07
+exploits: sign-03 kex-02 sign-07 kex-05 sign-34
 	@$(MAKE) --no-print-directory -C sign-03 exploit
+	@$(MAKE) --no-print-directory -C sign-34 exploit
 	@$(MAKE) --no-print-directory -C kex-02 exploit
 	@$(MAKE) --no-print-directory -C sign-07 exploit
+	@$(MAKE) --no-print-directory -C kex-05 replay exploit
 
 test: $(addprefix test-,$(CANDIDATES))
 	@$(MAKE) --no-print-directory status
@@ -46,6 +51,18 @@ status: | results
 
 reproduce: tools
 	tools/reproduce.sh
+
+design-audit:
+	python3 security/design_parameter_audit.py
+
+check-vulnerabilities:
+	python3 security/check_vulnerability_ids.py
+
+check-reference-data:
+	python3 tools/sync_reference_data.py --check
+
+sync-reference-data:
+	python3 tools/sync_reference_data.py $(NGCC1)
 
 manifest: $(addprefix manifest-,$(CANDIDATES))
 $(addprefix manifest-,$(CANDIDATES)): manifest-%: %

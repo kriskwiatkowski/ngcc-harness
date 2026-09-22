@@ -25,6 +25,9 @@ make -C kem-01 && make -C sign-07    # <id>/lib/lib<instance>.so
 make -C kem-01 test                  # reproduce the submitted KATs (kat.sha256)
 tools/reproduce.sh                   # run every reproducer and its controls
 tools/reproduce.sh kem-01            # or one candidate
+make design-audit                    # static specification/parameter findings
+make check-vulnerabilities           # validate all stable vulnerability IDs
+make check-reference-data            # validate all specs and parameter records
 ```
 
 `make -j8 all test` builds and KAT-tests every included candidate. Run
@@ -37,9 +40,12 @@ Makefile).
 ```
 api/            KAT harness (bin/ngcc_kat), link shim, generic make rules; api/README.md
 tools/          ngcc_attack.c reproducer, reproduce.sh runner; tools/README.md
-<id>/           included reference sources, per-candidate Makefile,
+security/       complete vulnerability inventory, static audit and exact evidence
+data/           machine-readable parameters, candidate metadata and spec provenance
+<id>/           specification and extracted pseudocode/parameters for every candidate;
+                included reference sources and a Makefile where needed by this harness,
                 kat.sha256 manifest, and patches/ where shipped source cannot
-                compile as-is; kex-02, sign-03 and kem-29 also have
+                compile as-is; kex-02, kex-05, sign-03 and kem-29 also have
                 candidate-local reproducer source
 downloads.csv   candidate list with archive URLs from niccs.org.cn
 download.sh     optional: fetch original archives into orig/<id>/orig.zip
@@ -48,11 +54,20 @@ SOURCE_ARCHIVES.md  archive sizes and SHA-256 digests for included candidates
 ```
 
 Candidate ids (`sign-NN`, `kem-NN`, `kex-NN`, `hash-NN`) follow the numbering
-of the official Round 1 lists. Only candidates covered by a published report,
-or used as a control by `reproduce.sh`, have sources and build files here.
+of the official Round 1 lists. Every candidate has its submitted specification
+and a human-readable extraction of its algorithms and parameter tables. Every
+submitted implementation instance is also represented in `data/parameters.csv`.
+Only candidates covered by a published report, used as a reproducer control, or
+needed by the static audit have reference source files here; a directory without
+a Makefile is therefore a reference-data entry rather than a build target.
 Submitted test-vector files are not included: the compact `kat.sha256`
 manifests let `make test` compare freshly generated vectors to every required
 reference digest without retaining multi-gigabyte text files.
+
+Every published issue is identified in `security/vulnerabilities.csv` by its
+stable `xxx-yy-z` ID. The verification field distinguishes runtime witnesses,
+static checks, findings covered by both, and review findings for which no cheap
+automated witness is claimed.
 
 `api/drng.c`, `api/auxfunc.c` and the `api/API_PKC`, `api/API_CryptHash`
 trees are the official NICCS API package files, unmodified; the harness links

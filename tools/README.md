@@ -1,10 +1,20 @@
 # Reproducers
 
-Runnable witnesses for every defect reported in the `*/report.md` files. Each
+Runnable witnesses for report findings that admit a low-cost experiment. Each
 one drives a candidate's own reference implementation through the uniform ABI
 described in `api/README.md`. No submission file is modified and no shipped
 binary is executed; the libraries are compiled from the candidates' own sources
-by the per-candidate Makefiles.
+by the per-candidate Makefiles. Information-theoretic parameter ceilings use
+`security/design_parameter_audit.py` instead and do not attempt their generic
+`2^128` or `2^256` attacks.
+
+Each issue has a stable ID of the form `xxx-yy-z`: `xxx-yy` is the candidate
+algorithm ID and `z` is that candidate's sequential report number. The runner
+prints the relevant ID beside each runtime witness. The complete list, including
+findings without a runnable witness, is `security/vulnerabilities.csv`; run
+`make check-vulnerabilities` to validate its IDs, statuses, and checker coverage.
+Every issue has its own `Severity`, `Status`, `Layer`, `Affected`, `Discovery`,
+`Exploitation`, `Credit`, and `Date` metadata in the corresponding report.
 
 ## Running everything
 
@@ -16,7 +26,7 @@ tools/reproduce.sh             # run every reproducer
 tools/reproduce.sh hash-09     # or just one candidate
 ```
 
-`reproduce.sh` exits 0 when every reported defect reproduced and every control
+`reproduce.sh` exits 0 when every supported runtime witness reproduced and every control
 stayed clean. A candidate whose libraries are not built is reported as `SKIP`
 and makes the run fail, so an incomplete build cannot look successful.
 
@@ -35,25 +45,37 @@ than always firing.
 
 | check | defect | candidates |
 |---|---|---|
-| `hash-collide-zeropad` | `H(M) == H(M‖0000000)`; the byte-aligned padding branch writes `0x01` where MSB-first `pad10*` needs `0x80` | Eijen (hash-09) |
+| `hash-collide-zeropad` | `H(M) == H(M‖0000000)` because byte-aligned input follows the specification's LSB-first `0x01` convention while partial-byte API input is handled MSB-first | Eijen (hash-09) |
 | `hash-collide-rate` | `pad10*1` puts both padding bits in one position when `\|M\| mod r == r-1` | MasterCube (hash-17) |
 | `hash-prefix` | no domain separation, so the short digest is a byte-exact prefix of the long one | Megascon (hash-18), Mozi (hash-20) |
 | `kem-ct-flip` | the FO implicit-rejection branch is dead code, so modified ciphertexts still return the original shared secret | Aigis-Enc+ (kem-01) |
 | `kem-reject-mask` | the rejection mask is not normalised to all-ones, so the returned value retains the low 7 bits of every byte of the valid secret | CheetahKEM (kem-09), LoongKEM (kem-18) |
 | `kex-pfs-recovery` | recorded ciphertexts plus later compromise of the API long-term keys recover the exact completed-session key | AFS-KEX (kex-02) |
+| `honest-failure` | a deterministic honest four-pass exchange aborts when the initiator cannot decapsulate the responder's ciphertext | LoomKEX-256 (kex-05) |
+| `state-rollback-key-recovery` | chosen pass-2 queries against a restored pass-1 state recover the complete ephemeral KEM secret and predict the final AKE secret | LoomKEX-256 (kex-05) |
 | `sign-fors-forgery` | repeated two-bit FORS addressing permits an adaptive chosen-message signature forgery | CEDRUS+C 160f (sign-03) |
 | `sig-forge-transcript` | every verifier condition except the hash equality holds for an attacker-chosen challenge support with z=0 | CS (sign-07) |
 | `sig-forge-grind` | universal forgery: the verifier only sees `c mod 2`, so the grind is C(n,tau), not C(n,tau)*2^tau | CS (sign-07) |
-| `sig-malleable` | non-canonical trailing encoding bytes, so a distinct signature verifies for the same message (SUF-CMA) | Aigis-Sig+ (sign-01), CS (sign-07) |
+| `sig-malleable` | non-canonical trailing encoding bytes yield a distinct valid signature (SUF-CMA); malformed Aigis hint counts also exercise its verifier stack write | Aigis-Sig+ (sign-01), CS (sign-07) |
+| `sig-transcript-leak` | the perturbation covariance is built from the Gram of the basis *rows* instead of its *columns*, so the signature distribution is key-dependent and not simulatable | YuanYang.DSA (sign-34) |
+| `pk-noncanonical` | q^4 < 2^46 leaves the 4-coefficient public-key packing non-injective, so a distinct public-key encoding decodes to the same h and accepts the same signatures | YuanYang.DSA (sign-34) |
 | `sig-hint-padding` | unused fixed-size hint slots are not checked, so a distinct encoding verifies for the same message (SUF-CMA) | MORNING-ATLAS (sign-15) |
-| `sig-accept-all` | the verifier discards its result and accepts anything | UVW (sign-32) |
+| `sig-accept-all` | the verifier discards its result and accepts anything; the guarded all-zero call also records the UVW-128/-256 crash | UVW (sign-32) |
 | `sig-uninit-verdict` | with `NDEBUG`, required verifier checks disappear and an all-zero signature's verdict depends on stale stack contents | SQIsign2D2 Level2-eff uncompressed (sign-25) |
 | `keygen-determinism` | key generation ignores the seeded DRNG, so two different seeds give the same key | Galas (sign-12) |
 | `keygen-fresh` | the seed is ignored but an internal generator advances within a process, so the defect shows as an identical *first* key in every fresh process | HEP-QC (kem-17), VDOO (sign-33) |
+| `kem-enc-fresh` | the first key, ciphertext, and shared secret are identical across fresh processes despite different API seeds | HEP-QC (kem-17) |
+| `sig-random-fresh` | different messages in fresh processes receive the same 16-byte signing salt despite different API seeds | VDOO (sign-33) |
 
 VDOO needs `keygen-fresh` rather than `keygen-determinism`: its unseeded
 generator carries a counter, so two keys made in one process differ and an
 in-process test would wrongly clear it.
+`sig-random-fresh` additionally changes the message between processes; the
+repeated signature tail is VDOO's encoded salt.
+`sig-transcript-leak` ships its own control: the identical per-FFT-slot
+dispersion statistic is run on a synthetic transcript drawn from the spherical
+distribution a correct GPV sampler would produce, which prints
+`NOT-CONFIRMED`.
 
 Polar-KEM has its own reproducer, `kem-29/reproduce_public_recovery.py`, because
 the break is specific: the submission ships `polarkem_recover_message(pk, ct, mu)`
@@ -66,6 +88,19 @@ long-term secret keys as compromised. Their first halves contain the composite
 KEM secret keys, allowing the driver to decapsulate both recorded ciphertexts
 and reproduce the exact old session key. A static-key-only control derives a
 different value.
+
+Loom has a scalar-reference `kex-05/reproduce_failure` driver. It replays the
+known deterministic index 136129 through the complete four-pass exchange and
+requires the normalized full-witness SHA-256 to match. Build it with
+`make -C kex-05 replay`; no optimized implementation is required. The retained
+witness and search methodology are in `security/LOOM_FAILURE_SEARCH.md`.
+
+The separate `kex-05/reproduce_state_rollback_key_recovery` exploit restores a
+saved pass-1 state before each chosen pass-2 query. It recovers all 1,024 secret
+coefficients and predicts an honest exchange's final shared secret. This is a
+conditional rollback/cloning/concurrent-evaluation attack, not a claim about a
+strictly linear deployment that irrevocably consumes state. Build it with
+`make -C kex-05 exploit`.
 
 CEDRUS+C has a candidate-local `sign-03/reproduce_forgery` driver. It obtains
 1,000 signatures on distinct chosen messages, catalogs the disclosed FORS
