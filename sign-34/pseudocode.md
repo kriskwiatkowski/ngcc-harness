@@ -250,6 +250,49 @@ on (|f|², |g|², |F̂|², |Ĝ|²) gives R² = 0.989 with coefficients
 (−0.05, −1.07, +1.10, +0.07) — the predicted (0, −1, +1, 0). `Var0 + Var1` is
 constant per slot (mean 9997, sd 116) while `Var0 − Var1` has sd 1224.
 
+The off-diagonal completes the picture and is the more damaging half. Because
+`b^2 = b2 - proj_{b1}(b2)` is a Gram–Schmidt orthogonalisation, the *row* Gram
+is already diagonal (`<b1, b^2> = 0`), so subtracting it leaves the column
+Gram's off-diagonal untouched:
+
+```
+Cov01 at slot j = phi_j(f) conj(phi_j(g)) + phi_j(F^) conj(phi_j(G^))
+```
+
+Measured against the true secret over 30 000 signatures: slope 1.022, R² = 0.984
+(the row-Gram off-diagonal explains nothing, R² = 0.004, exactly as predicted).
+Writing `tau_j = |phi_j(F^)|² - |phi_j(g)|²` and `upsilon_j` for that
+off-diagonal, orthogonality gives `phi_j(G^) = -conj(phi_j(f)) phi_j(F^) /
+conj(phi_j(g))`, and substituting collapses the pair to
+
+```
+upsilon_j = -(phi_j(f) / phi_j(g)) * tau_j
+```
+
+so the transcript determines **`f/g` slot by slot**, as
+`-2*Cov01_j / (Cov00_j - Cov11_j)`, from signatures and the public key alone.
+Recovering `(f,g)` from a known `f/g` is a rank-1 module-lattice shortest-vector
+problem, not a search: the solution set is `{a*(p,s) : a in R}` for any fixed
+pair with `p/s = f/g`, and `(f,g)` is its short vector. That last step is not
+carried out here.
+
+Accuracy, one yuanyang-512 key (relative rmse against the true values):
+
+| signatures | tau (after debias) | upsilon | median rel. err of f_j/g_j, best-conditioned half |
+|---|---|---|---|
+| 8 000 | 0.152 | 0.174 | 0.181 |
+| 30 000 | 0.135 | 0.131 | 0.144 |
+| 120 000 | 0.132 | 0.117 | 0.123 |
+| model floor | — | — | 0.018 |
+
+Fifteen times more signatures move `tau` only from 0.152 to 0.132, far slower
+than the 1/sqrt(N) a purely statistical error would follow, so a systematic
+residual near 13 % remains: the first-order model above is not the whole deviation, and
+the Delta1/Delta2 rejections and the fixed-point rounding contribute the rest.
+The "model floor" row uses exact secret values and zero sampling noise, and is
+limited only by `u_hat` being rounded to 2^-11, which leaves
+`|<b1, b^2>|` at a median of 7.7 instead of 0.
+
 Consequences: the per-slot variance of `s1` spans a factor ≈ 4 (yuanyang-512:
 2748…11061 against σ_sig² = 4867), the transcript is not simulatable from the
 public key, and the EUF-CMA reduction of spec §5 does not apply. An attacker
