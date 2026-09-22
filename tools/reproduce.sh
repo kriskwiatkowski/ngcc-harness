@@ -155,7 +155,6 @@ if [ -z "$only" ] || [ "$only" = sign-03 ]; then
 fi
 
 echo
-
 echo "== sign-07 CS: universal forgery, challenge signs invisible to the verifier (report: Critical) =="
 if [ -z "$only" ] || [ "$only" = sign-07 ]; then
     if [ -x sign-07/forgery_CS-128-scaled-tau3 ] &&
